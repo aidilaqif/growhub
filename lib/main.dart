@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/home_page.dart';
+import 'package:growhub/nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white54),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: const NavBar(),
     );
   }
 }
