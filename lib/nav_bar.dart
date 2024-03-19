@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
 
 class NavBar extends StatefulWidget {
@@ -49,7 +50,7 @@ class _NavBarState extends State<NavBar> {
       body: <Widget>[
         /// Home page
         const HomePage(),
-        const Center(child: Text("Discover")),
+        const DiscoverPage(),
         const Center(child: Text("Community")),
         const Center(child: Text("Profile")),
       ][currentPageIndex],
