@@ -1,10 +1,8 @@
 
 import 'package:flutter/material.dart';
-
 import 'package:growhub/status_page.dart';
 
 class HomePage extends StatefulWidget {
-
   const HomePage({super.key});
 
   @override
@@ -86,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage(isGood: isGood)));
                     },
                     child: Container(
                       height: 30,
