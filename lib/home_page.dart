@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+import 'package:growhub/status_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -73,25 +75,30 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.black54
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "i",
-                        style: TextStyle(
-                          fontSize: 18,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage()));
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.all(
+                          width: 2,
                           color: Colors.black54
                         ),
-                        )),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "i",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black54
+                          ),
+                          )),
+                    ),
                   ),
                   const SizedBox(
                     width: 20,
