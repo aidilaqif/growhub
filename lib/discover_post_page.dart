@@ -33,11 +33,7 @@ class DiscoverPostPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0),
           child: Column(
-            
             children: [
-              // const SizedBox(
-              //   height: 10,
-              // ),
               //Discover Page
               SizedBox(
                 width: 372.6,
@@ -67,20 +63,23 @@ class DiscoverPostPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                height: 500,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: SizedBox(
-                    width: 372.2,
-                    child: Text(
-                      discoverItems.caption,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0XFF545454),
-                        fontWeight: FontWeight.w500
-                      ),
-                      ),
+              Expanded(
+                flex: 1,
+                child: SizedBox(
+                  height: 500,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: SizedBox(
+                      width: 372.2,
+                      child: Text(
+                        discoverItems.caption,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0XFF545454),
+                          fontWeight: FontWeight.w500
+                        ),
+                        ),
+                    ),
                   ),
                 ),
               )

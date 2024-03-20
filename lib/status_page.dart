@@ -30,14 +30,39 @@ class StatusPage extends StatelessWidget {
           ),
           ),
       ),
-      body: Center(
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: StatusItems.statusItems.length,
-          itemBuilder: (context, index){
-            return StatusItemsWidget(statusItems: StatusItems.statusItems[index]);
-          },
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Center(
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: StatusItems.statusItems.length,
+                itemBuilder: (context, index){
+                  return StatusItemsWidget(statusItems: StatusItems.statusItems[index]);
+                },
+              ),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 372.2,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: const Text(
+              "Fix All",
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
+          ),
+          const SizedBox(height: 30,)
+        ],
       )
     );
   }

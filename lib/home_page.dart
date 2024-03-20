@@ -3,11 +3,20 @@ import 'package:flutter/material.dart';
 
 import 'package:growhub/status_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isGood = false;
+
+  @override
   Widget build(BuildContext context) {
+    const durationDays = "28";
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 30,
@@ -43,9 +52,9 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "28 Days",
+                      "$durationDays Days",
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 34,
                         color: Colors.black,
                         fontWeight: FontWeight.bold
                       ),
@@ -53,7 +62,7 @@ class HomePage extends StatelessWidget {
                     Text(
                       "Until Harvest",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 15,
                         color: Colors.black45
                       )
                       )
@@ -114,13 +123,13 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 60,
                     child: Text(
-                      "Bad",
+                      isGood? "Good":"Bad",
                       style: TextStyle(
                         fontSize: 21,
-                        color: Colors.red,
+                        color: isGood? Colors.green : Colors.red,
                         fontWeight: FontWeight.bold
                       ),
                     ),
