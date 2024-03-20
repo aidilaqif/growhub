@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:growhub/discover_items.dart';
 import 'package:growhub/discover_items_widget.dart';
 
@@ -97,15 +98,18 @@ class DiscoverPage extends StatelessWidget {
             height: 32,
           ),
           //Discover Items
-          SizedBox(
-            width: 380,
-            height: 630,
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: DiscoverItems.discoverItems.length,
-              itemBuilder: (context, index){
-                return DiscoverItemsWidget(discoverItems: DiscoverItems.discoverItems[index]);
-              },
+          Expanded(
+            flex: 1,
+            child: SizedBox(
+              width: 380,
+              height: 630,
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: DiscoverItems.discoverItems.length,
+                itemBuilder: (context, index){
+                  return DiscoverItemsWidget(discoverItems: DiscoverItems.discoverItems[index]);
+                },
+              ),
             ),
           ),
         ],
