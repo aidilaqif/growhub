@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:growhub/dashboard_page.dart';
 import 'package:growhub/status_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,273 +16,75 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    const durationDays = "28";
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 30,
-        backgroundColor: Colors.white54,
-        title: const Text(
-          "Dashboard",
-          style: TextStyle(
-            fontSize: 30,
-            color: Colors.black,
-            fontWeight: FontWeight.bold
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 60,
+          backgroundColor: Colors.white54,
+          title: const Text(
+            "GrowHub",
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.black,
+              fontWeight: FontWeight.bold
+            ),
           ),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'All Plant',),
+              Tab(text: 'To Inspect',)
+            ]
+            ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            //DaysToHarvest
-            Center(
-              child: Container(
-                height: 250,
-                width: 250,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color(0XFF2C855A),
-                    width: 8,
-                    ),
-                  shape: BoxShape.circle,
-                ),
-                child:const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "$durationDays Days",
-                      style: TextStyle(
-                        fontSize: 34,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      "Until Harvest",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black45
-                      )
-                      )
-                  ],
-                )
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            //Status
-            Container(
-              height: 100,
-              width: 350,
-              decoration: const BoxDecoration(
-                color: Color(0XFFE0E4E5),
-                borderRadius: BorderRadius.all(Radius.circular(10))
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage(isGood: isGood)));
-                    },
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.black54
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "i",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black54
-                          ),
-                          )),
-                    ),
-                  ),
-                  const SizedBox(
+        body:  Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: TabBarView(children: [
+            GridView.count(
+              scrollDirection: Axis.vertical,
+              primary: false,
+              padding: const EdgeInsets.all(10),
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DashBoardPage()));
+                  },
+                  child: Container(
+                    height: 20,
                     width: 20,
-                  ),
-                  const SizedBox(
-                    width: 90,
-                    child: Text(
-                      "Status : ",
-                      style: TextStyle(
-                        fontSize: 21,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 60,
-                    child: Text(
-                      isGood? "Good":"Bad",
-                      style: TextStyle(
-                        fontSize: 21,
-                        color: isGood? Colors.green : Colors.red,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            //Humidity and PH
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 100,
-                  width: 165,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  alignment: Alignment.centerLeft,
-                  decoration: const BoxDecoration(
-                    color: Color(0XFFE0E4E5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Humidity",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      Text("30",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                    ],
+                    color: Colors.red,
                   ),
                 ),
-                const SizedBox(
+                Container(
+                  height: 20,
                   width: 20,
+                  color: Colors.red,
                 ),
                 Container(
-                  height: 100,
-                  width: 165,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  alignment: Alignment.centerLeft,
-                  decoration: const BoxDecoration(
-                    color: Color(0XFFE0E4E5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("pH",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      Text("7",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                  height: 20,
+                  width: 20,
+                  color: Colors.red,
+                )
               ],
             ),
-            const SizedBox(
-              height: 40,
+            ListView.separated(
+              separatorBuilder: (BuildContext context, int index) => const Divider(),
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 50,
+                  color: Colors.green,
+                  child: const Center(
+                    child: Text('Plant')
+                  ),
+                );
+              },
             ),
-            //Weather and Air Moisture
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 100,
-                  width: 165,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  alignment: Alignment.centerLeft,
-                  decoration: const BoxDecoration(
-                    color: Color(0XFFE0E4E5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Weather",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      Text("Rainy",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  height: 100,
-                  width: 165,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  alignment: Alignment.centerLeft,
-                  decoration: const BoxDecoration(
-                    color: Color(0XFFE0E4E5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Air Moisture",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      Text("58%",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
+          ]),
+        )
       ),
     );
   }
