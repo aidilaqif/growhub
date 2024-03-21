@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/status_items.dart';
+import 'package:growhub/data/status_items.dart';
 
 class StatusItemsWidget extends StatelessWidget {
   final StatusItems statusItems;
