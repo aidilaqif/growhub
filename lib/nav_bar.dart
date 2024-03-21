@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/community/community.dart';
 import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
 
@@ -51,7 +52,7 @@ class _NavBarState extends State<NavBar> {
         /// Home page
         const HomePage(),
         const DiscoverPage(),
-        const Center(child: Text("Community")),
+        const CommunityPage(),
         const Center(child: Text("Profile")),
       ][currentPageIndex],
     );
