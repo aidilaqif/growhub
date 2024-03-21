@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/discover_items.dart';
+import 'package:growhub/data/discover_items.dart';
 import 'package:growhub/discover_items_widget.dart';
 
 class DiscoverPage extends StatelessWidget {
