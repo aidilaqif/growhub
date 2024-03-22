@@ -1,7 +1,5 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:growhub/humidity_page.dart';
 import 'package:growhub/pH_page.dart';
 import 'package:growhub/status_page.dart';
