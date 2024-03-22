@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/constants/colors.dart';
+import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/shadow.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
@@ -34,21 +36,21 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   ///Thumbnail image
-                  const TRoundedImage(imageUrl: "cili.jpeg", applyImageRadius: true),
+                  const TRoundedImage(imageUrl: TImages.promo1, applyImageRadius: true),
 
                   ///Sale tag
                   Positioned(
                     top: 12,
                     child: TRoundedContainer(
                       radius: TSizes.sm,
-                      backgroundColor: Colors.white.withOpacity(0.8),
+                      backgroundColor: TColors.secondary.withOpacity(0.8),
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text('25%',
                           style: Theme.of(context)
                               .textTheme
                               .labelLarge!
-                              .apply(color: Colors.black)),
+                              .apply(color: TColors.black)),
                     ),
                   ),
 
@@ -91,15 +93,15 @@ class TProductCardVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //price
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text("hi"),
-                ),
+                // const Padding(
+                //   padding: EdgeInsets.all(8.0),
+                //   child: TProductPriceText(price: '35.0'),
+                // ),
 
                 //add to cart button
                 Container(
                   decoration: const BoxDecoration(
-                    color: Colors.black,
+                    color: TColors.dark,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(TSizes.cardRadiusMd),
                       bottomRight: Radius.circular(TSizes.productImageRadius),
@@ -109,7 +111,7 @@ class TProductCardVertical extends StatelessWidget {
                     width: TSizes.iconLg * 1.2,
                     height: TSizes.iconLg * 1.2,
                     child:
-                        Center(child: Icon(Iconsax.add, color: Colors.white)),
+                        Center(child: Icon(Iconsax.add, color: TColors.white)),
                   ),
                 ),
               ],
