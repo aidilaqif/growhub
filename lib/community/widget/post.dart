@@ -3,8 +3,8 @@ import 'package:growhub/constants/shadow.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/rounded_container.dart';
 
-class TCardCategory extends StatelessWidget {
-  const TCardCategory({super.key});
+class TCommunityPost extends StatelessWidget {
+  const TCommunityPost({super.key});
 
   @override
   Widget build(BuildContext context) {

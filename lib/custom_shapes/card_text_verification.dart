@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/card/card_brand_title.dart';
+import 'package:growhub/custom_shapes/card_brand_title.dart';
 import 'package:growhub/constants/enums.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:iconsax/iconsax.dart';

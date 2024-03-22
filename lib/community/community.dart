@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/card/card_category.dart';
-import 'package:growhub/card/card_group.dart';
-import 'package:growhub/card/card_vertical.dart';
+import 'package:growhub/community/widget/content.dart';
+import 'package:growhub/community/widget/group.dart';
+import 'package:growhub/community/widget/post.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/texts/section_heading.dart';
 import 'package:growhub/widgets/grid_layout.dart';
@@ -28,13 +28,13 @@ class CommunityPage extends StatelessWidget {
                   TSectionHeading(title: 'Community', onPressed: (){}),                  
                   const SizedBox(height: TSizes.spaceBtwInputFields/2),
                   
-                  const TCardCategory(),
+                  const TCommunityPost(),
                   const SizedBox(height: TSizes.spaceBtwInputFields),
 
                   //product popular
-                  TGridLayout(itemCount: 2, itemBuilder: (_ , index) => const TProductCardVertical(),),
+                  TGridLayout(itemCount: 2, itemBuilder: (_ , index) => const TCommunityContent(),),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  TGridLayout(itemCount: 1, itemBuilder: (_ , index) => const TCardGroup(),),
+                  TGridLayout(itemCount: 1, itemBuilder: (_ , index) => const TCommunityGroup(),),
 
                 ],
               ),

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/card/card_circular_icon.dart';
-import 'package:growhub/card/card_text_verification.dart';
-import 'package:growhub/card/card_title_text.dart';
+import 'package:growhub/custom_shapes/card_text_verification.dart';
+import 'package:growhub/custom_shapes/card_title_text.dart';
 import 'package:growhub/constants/shadow.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/rounded_container.dart';
 import 'package:iconsax/iconsax.dart';
 
-class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+class TCommunityGroup extends StatelessWidget {
+  const TCommunityGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,26 +41,34 @@ class TProductCardVertical extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TProductTitleText(
-                      title: 'Post Title',
+                      title: 'Group Name',
                       smallSize: true,
                     ),
                     SizedBox(height: TSizes.spaceBtwItems / 2),
-                    TBrandTitleWithVerifiedIcon(title: 'More post content'),
+                    TBrandTitleWithVerifiedIcon(
+                        title: 'Description of the group'),
+                      SizedBox(height: TSizes.spaceBtwItems / 2),
+
                   ],
                 ),
               ),
             ),
 
-            //price row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Heart icon
-                const TCircularIcon(
-                  icon: Iconsax.heart5,
-                  color: Colors.black,
+                //price
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    '50 Members', // Price value
+                    style: TextStyle(
+                      fontSize: 13, // Adjust the font size as needed
+                      fontWeight: FontWeight
+                          .bold, // You can adjust the font weight as needed
+                    ),
+                  ),
                 ),
-
                 // Share button
                 Container(
                   decoration: const BoxDecoration(
@@ -75,7 +82,7 @@ class TProductCardVertical extends StatelessWidget {
                     width: TSizes.iconLg * 1.2,
                     height: TSizes.iconLg * 1.2,
                     child: Center(
-                      child: Icon(Iconsax.arrow_right_1, color: Colors.white),
+                      child: Icon(Iconsax.user_add, color: Colors.white),
                     ),
                   ),
                 ),
