@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:growhub/data/plants.dart';
 
 class InspectionCardsWidget extends StatelessWidget {
@@ -13,6 +14,9 @@ class InspectionCardsWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(
         top: 33,
+        left: 13,
+        right: 19,
+        bottom: 10
       ),
       height: 199,
       width: 384.5,
@@ -21,11 +25,13 @@ class InspectionCardsWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
             width: 120,
             height: 199,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //plantImage
                 Container(
@@ -49,7 +55,7 @@ class InspectionCardsWidget extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 10,
                     color: Color(0XFF545454),
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
                 //tagging
@@ -58,31 +64,79 @@ class InspectionCardsWidget extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 10,
                     color: Color(0XFF545454),
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ],
             ),
           ),
           SizedBox(
-            width: 184.1,
+            width: 213.3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  plants.inspections1,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0XFF545454),
-                    fontWeight: FontWeight.w700,
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  width: 213.3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //white dot
+                      Container(
+                        height: 11.5,
+                        width: 12.2,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      //inspections 1
+                      SizedBox(
+                        width: 184.1,
+                        child: Text(
+                          plants.inspections1,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0XFF545454),
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  plants.inspections2,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0XFF545454),
-                    fontWeight: FontWeight.w700,
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 213.3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //white dot
+                      Container(
+                        height: 11.5,
+                        width: 12.2,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      //inspections 2
+                      SizedBox(
+                        width: 184.1,
+                        child: Text(
+                          plants.inspections2,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0XFF545454),
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
