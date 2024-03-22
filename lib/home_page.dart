@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:growhub/dashboard_page.dart';
+import 'package:growhub/data/plants.dart';
+import 'package:growhub/inspection_cards_widget.dart';
+import 'package:growhub/plants_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,8 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isGood = false;
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -30,55 +31,40 @@ class _HomePageState extends State<HomePage> {
           ),
           bottom: const TabBar(
             tabs: [
-              Tab(text: 'All Plant',),
-              Tab(text: 'To Inspect',)
+              Tab(text: 'All',),
+              Tab(text: 'Inspection',)
             ]
             ),
         ),
         body:  Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: TabBarView(children: [
-            GridView.count(
-              scrollDirection: Axis.vertical,
+            GridView.builder(
+              // scrollDirection: Axis.vertical,
+              addSemanticIndexes: false,
               primary: false,
               padding: const EdgeInsets.all(10),
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: [
-                GestureDetector(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: MediaQuery.of(context).size.width /
+              (MediaQuery.of(context).size.height / 1.8),
+              ),
+              itemCount: Plants.plants.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DashBoardPage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DashBoardPage(plants: Plants.plants[index], index: index)));
                   },
-                  child: Container(
-                    height: 20,
-                    width: 20,
-                    color: Colors.red,
-                  ),
-                ),
-                Container(
-                  height: 20,
-                  width: 20,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 20,
-                  width: 20,
-                  color: Colors.red,
-                )
-              ],
+                  child: PlantsCardWidget(plants: Plants.plants[index]));
+              }
             ),
             ListView.separated(
               separatorBuilder: (BuildContext context, int index) => const Divider(),
-              itemCount: 3,
+              itemCount: Plants.plants.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 50,
-                  color: Colors.green,
-                  child: const Center(
-                    child: Text('Plant')
-                  ),
-                );
+                return InspectionCardsWidget(plants: Plants.plants[index]);
               },
             ),
           ]),

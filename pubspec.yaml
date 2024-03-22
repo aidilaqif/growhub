@@ -49,6 +49,7 @@ dependencies:
   readmore: ^2.2.0
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
+  animate_do: ^3.1.2
 
 dev_dependencies:
   flutter_test:

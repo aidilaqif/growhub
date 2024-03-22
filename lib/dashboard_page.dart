@@ -1,23 +1,23 @@
 
 import 'package:flutter/material.dart';
+import 'package:growhub/data/plants.dart;
 import 'package:growhub/humidity_page.dart';
 import 'package:growhub/pH_page.dart';
 import 'package:growhub/status_page.dart';
 import 'package:growhub/weather_page.dart';
 
-class DashBoardPage extends StatefulWidget {
-  const DashBoardPage({super.key});
+class DashBoardPage extends StatelessWidget {
+  final Plants plants;
+  final int index;
+  const DashBoardPage({
+    super.key,
+    required this.plants,
+    required this.index
+  });
 
-  @override
-  State<DashBoardPage> createState() => _DashBoardPageState();
-}
-
-class _DashBoardPageState extends State<DashBoardPage> {
-  bool isGood = false;
 
   @override
   Widget build(BuildContext context) {
-    const durationDays = "28";
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 30,
@@ -37,38 +37,41 @@ class _DashBoardPageState extends State<DashBoardPage> {
             const SizedBox(
               height: 40,
             ),
+            Text(
+              "Tag : ${plants.tagging}",
+              style: const TextStyle(
+                fontSize: 24,
+                color: Color(0XFF545454),
+                fontWeight: FontWeight.w800
+              ),
+            ),
+            const SizedBox(
+              height: 9,
+            ),
             //DaysToHarvest
             Center(
               child: Container(
-                height: 250,
-                width: 250,
+                padding: const EdgeInsets.all(5),
+                height: 281.9,
+                width: 281.9,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: const Color(0XFF2C855A),
                     width: 8,
-                    ),
+                  ),
                   shape: BoxShape.circle,
                 ),
-                child:const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "$durationDays Days",
-                      style: TextStyle(
-                        fontSize: 34,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                      ),
+                child: Container(
+                  height: 281.9,
+                  width: 281.9,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(plants.plantImage),
+                      fit: BoxFit.cover,
                     ),
-                    Text(
-                      "Until Harvest",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black45
-                      )
-                      )
-                  ],
-                )
+                    shape: BoxShape.circle,
+                  ),
+                ),
               ),
             ),
             const SizedBox(
@@ -87,16 +90,16 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage(isGood: isGood)));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatusPage(plants: Plants.plants[index])));
                     },
                     child: Container(
-                      height: 30,
-                      width: 30,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         border: Border.all(
-                          width: 2,
-                          color: Colors.black54
+                          width: 3,
+                          color: const Color(0XFF545454),
                         ),
                         shape: BoxShape.circle,
                       ),
@@ -104,8 +107,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         child: Text(
                           "i",
                           style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black54
+                            fontSize: 28,
+                            color: Color(0XFF545454),
+                            fontWeight: FontWeight.w600
                           ),
                           )),
                     ),
@@ -113,28 +117,31 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   const SizedBox(
                     width: 20,
                   ),
-                  const SizedBox(
-                    width: 90,
-                    child: Text(
-                      "Status : ",
-                      style: TextStyle(
-                        fontSize: 21,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                      ),
+                  SizedBox(
+                    width: 258.3,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          plants.plantName,
+                          style: const TextStyle(
+                            fontSize: 21,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Text(
+                          "Days until harvest: ${plants.daysToHarvest}",
+                          style: const TextStyle(
+                            fontSize: 21,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    width: 60,
-                    child: Text(
-                      isGood? "Good":"Bad",
-                      style: TextStyle(
-                        fontSize: 21,
-                        color: isGood? Colors.green : Colors.red,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
@@ -147,7 +154,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               children: [
                 GestureDetector(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HumidityPage()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HumidityPage()));
                   },
                   child: Container(
                     height: 100,
@@ -158,24 +165,36 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       color: Color(0XFFE0E4E5),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                     ),
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Humidity",
+                        const Text("Humidity",
                           style: TextStyle(
                             fontSize: 19,
                             color: Colors.black,
                             fontWeight: FontWeight.bold
                           ),
                         ),
-                        Text("30",
-                          style: TextStyle(
-                            fontSize: 19,
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w700
-                          ),
+                        SizedBox(
+                        width: 165,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(plants.currentHumidity,
+                              style: const TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w700
+                              ),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Color(0XFF545454),
+                            )
+                          ],
                         ),
+                      ),
                       ],
                     ),
                   ),
@@ -196,24 +215,36 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       color: Color(0XFFE0E4E5),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                     ),
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("pH",
+                        const Text("pH",
                           style: TextStyle(
                             fontSize: 19,
                             color: Colors.black,
                             fontWeight: FontWeight.bold
                           ),
                         ),
-                        Text("7",
-                          style: TextStyle(
-                            fontSize: 19,
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w700
-                          ),
+                        SizedBox(
+                        width: 165,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(plants.currentpH,
+                              style: const TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w700
+                              ),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Color(0XFF545454),
+                            )
+                          ],
                         ),
+                      ),
                       ],
                     ),
                   ),
@@ -240,24 +271,36 @@ class _DashBoardPageState extends State<DashBoardPage> {
                       color: Color(0XFFE0E4E5),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                     ),
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Weather",
+                        const Text("Weather",
                           style: TextStyle(
                             fontSize: 19,
                             color: Colors.black,
                             fontWeight: FontWeight.bold
                           ),
                         ),
-                        Text("Rainy",
-                          style: TextStyle(
-                            fontSize: 19,
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w700
-                          ),
+                        SizedBox(
+                        width: 165,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(plants.currentWeather,
+                              style: const TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w700
+                              ),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Color(0XFF545454),
+                            )
+                          ],
                         ),
+                      ),
                       ],
                     ),
                   ),
@@ -274,22 +317,34 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     color: Color(0XFFE0E4E5),
                     borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Air Moisture",
+                      const Text("Air Moisture",
                         style: TextStyle(
                           fontSize: 19,
                           color: Colors.black,
                           fontWeight: FontWeight.bold
                         ),
                       ),
-                      Text("58%",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
+                      SizedBox(
+                        width: 165,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(plants.currentAirMoisture,
+                              style: const TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w700
+                              ),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Color(0XFF545454),
+                            )
+                          ],
                         ),
                       ),
                     ],
