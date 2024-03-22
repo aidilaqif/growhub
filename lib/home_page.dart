@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:growhub/dashboard_page.dart';
 import 'package:growhub/data/plants.dart';
 import 'package:growhub/inspection_cards_widget.dart';
 import 'package:growhub/plants_card_widget.dart';
@@ -12,8 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isGood = false;
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -54,7 +53,11 @@ class _HomePageState extends State<HomePage> {
               ),
               itemCount: Plants.plants.length,
               itemBuilder: (BuildContext context, int index) {
-                return PlantsCardWidget(plants: Plants.plants[index]);
+                return GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DashBoardPage(plants: Plants.plants[index], index: index)));
+                  },
+                  child: PlantsCardWidget(plants: Plants.plants[index]));
               }
             ),
             ListView.separated(
