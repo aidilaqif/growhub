@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:growhub/community/community.dart';
 import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
+import 'package:growhub/profile/user.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -27,23 +28,47 @@ class _NavBarState extends State<NavBar> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home, size: 40,),
-            icon: Icon(Icons.home_outlined, size: 40,),
+            selectedIcon: Icon(
+              Icons.home,
+              size: 40,
+            ),
+            icon: Icon(
+              Icons.home_outlined,
+              size: 40,
+            ),
             label: '',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.search, size: 40,),
-            icon: Icon(Icons.search_outlined, size: 40,),
+            selectedIcon: Icon(
+              Icons.search,
+              size: 40,
+            ),
+            icon: Icon(
+              Icons.search_outlined,
+              size: 40,
+            ),
             label: '',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.group, size: 40,),
-            icon: Icon(Icons.group_outlined, size: 40,),
+            selectedIcon: Icon(
+              Icons.group,
+              size: 40,
+            ),
+            icon: Icon(
+              Icons.group_outlined,
+              size: 40,
+            ),
             label: '',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.person_rounded, size: 40,),
-            icon: Icon(Icons.person_outline_rounded, size: 40,),
+            selectedIcon: Icon(
+              Icons.person_rounded,
+              size: 40,
+            ),
+            icon: Icon(
+              Icons.person_outline_rounded,
+              size: 40,
+            ),
             label: '',
           ),
         ],
@@ -53,7 +78,7 @@ class _NavBarState extends State<NavBar> {
         const HomePage(),
         const DiscoverPage(),
         const CommunityPage(),
-        const Center(child: Text("Profile")),
+        ProfilePage(),
       ][currentPageIndex],
     );
   }
