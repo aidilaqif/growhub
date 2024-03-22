@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:growhub/data/plants.dart;
+import 'package:growhub/data/plants.dart';
 import 'package:growhub/humidity_page.dart';
 import 'package:growhub/pH_page.dart';
 import 'package:growhub/status_page.dart';
