@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:growhub/humidity_page.dart';
 import 'package:growhub/pH_page.dart';
 import 'package:growhub/status_page.dart';
+import 'package:growhub/weather_page.dart';
 
 class DashBoardPage extends StatefulWidget {
   const DashBoardPage({super.key});
@@ -228,34 +229,39 @@ class _DashBoardPageState extends State<DashBoardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 100,
-                  width: 165,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  alignment: Alignment.centerLeft,
-                  decoration: const BoxDecoration(
-                    color: Color(0XFFE0E4E5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Weather",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WeatherPage()));
+                  },
+                  child: Container(
+                    height: 100,
+                    width: 165,
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    alignment: Alignment.centerLeft,
+                    decoration: const BoxDecoration(
+                      color: Color(0XFFE0E4E5),
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                    ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Weather",
+                          style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold
+                          ),
                         ),
-                      ),
-                      Text("Rainy",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w700
+                        Text("Rainy",
+                          style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w700
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
