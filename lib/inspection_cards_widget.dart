@@ -12,7 +12,7 @@ class InspectionCardsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        top: 33,
+        top: 30,
       ),
       height: 199,
       width: 384.5,
