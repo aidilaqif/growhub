@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:growhub/community/home_controller.dart';
+import 'package:growhub/community/community_controller.dart';
 import 'package:growhub/constants/colors.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/circular_container.dart';
