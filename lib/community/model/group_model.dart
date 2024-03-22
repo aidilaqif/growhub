@@ -18,7 +18,7 @@ class DashboardCategoriesModel {
     return [
       DashboardCategoriesModel("S", "Small Farm", "30 members", null),
       DashboardCategoriesModel(
-        "P",
+        "B",
         "Benih Mur",
         "78 members",
         () {

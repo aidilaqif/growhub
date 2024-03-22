@@ -39,7 +39,7 @@ class TCommunityPost extends StatelessWidget {
                   children: [
                     TextField(
                       decoration: InputDecoration(
-                        hintText: 'What\'s on your mind?',
+                        hintText: 'Post something here',
                         filled: true,
                         fillColor: Colors.grey[200],
                         border: OutlineInputBorder(
