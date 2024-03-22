@@ -4,7 +4,7 @@ import 'package:growhub/custom_shapes/product_card_vertical.dart';
 import 'package:growhub/layout/layout_horizontal.dart';
 
 class GroupList extends StatelessWidget {
-  const GroupList({Key? key});
+  const GroupList({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,10 +4,7 @@ import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
-import 'package:growhub/custom_shapes/card_circular_icon.dart';
-import 'package:growhub/custom_shapes/card_text_verification.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
-import 'package:iconsax/iconsax.dart';
 
 class TProductCardVertical extends StatefulWidget {
   const TProductCardVertical({Key? key}) : super(key: key);
