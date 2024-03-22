@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/colors.dart';
 import 'package:growhub/constants/image_strings.dart';
-import 'package:growhub/constants/shadow.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
@@ -10,95 +9,85 @@ import 'package:growhub/custom_shapes/card_text_verification.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
 import 'package:iconsax/iconsax.dart';
 
+class TProductCardVertical extends StatefulWidget {
+  const TProductCardVertical({Key? key}) : super(key: key);
 
-class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+  @override
+  _TProductCardVerticalState createState() => _TProductCardVerticalState();
+}
+
+class _TProductCardVerticalState extends State<TProductCardVertical> {
+  bool _isJoined = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          _isJoined = !_isJoined;
+        });
+      },
       child: Container(
-        width: 180,
+        width: 150,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          boxShadow: [TShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
           color: Colors.white,
         ),
         child: Column(
           children: [
-            //Thumbnail
-            TRoundedContainer(
+            const TRoundedContainer(
               height: 180,
-              padding: const EdgeInsets.all(TSizes.sm),
+              padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: Colors.white,
               child: Stack(
                 children: [
-                  ///Thumbnail image
-                  const TRoundedImage(imageUrl: TImages.promo1, applyImageRadius: true),
-
-                  ///Sale tag
-                  Positioned(
-                    top: 12,
-                    child: TRoundedContainer(
-                      radius: TSizes.sm,
-                      backgroundColor: TColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text('25%',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge!
-                              .apply(color: TColors.black)),
-                    ),
-                  ),
-
-                  ///Favourite Icon
-                  const Positioned(
-                    top: 0,
-                    right: 0,
-                    child: TCircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ),
-                  )
+                  TRoundedImage(
+                      imageUrl: TImages.group1, applyImageRadius: true),
+                  // Positioned(
+                  //   top: 12,
+                  //   child: TRoundedContainer(
+                  //     radius: TSizes.sm,
+                  //     backgroundColor: TColors.secondary.withOpacity(0.8),
+                  //     padding: const EdgeInsets.symmetric(
+                  //         horizontal: TSizes.sm, vertical: TSizes.xs),
+                  //     child: Text('25%',
+                  //         style: Theme.of(context)
+                  //             .textTheme
+                  //             .labelLarge!
+                  //             .apply(color: TColors.black)),
+                  //   ),
+                  // ),
+                  // Positioned(
+                  //   top: 0,
+                  //   right: 0,
+                  //   child: TCircularIcon(
+                  //     icon: Iconsax.heart5,
+                  //     color: Colors.red,
+                  //   ),
+                  // )
                 ],
               ),
             ),
-
-            const SizedBox(height: TSizes.spaceBtwItems / 2),
-
-            //Details
             const Padding(
-              padding: EdgeInsets.only(left: TSizes.sm),
+              padding: EdgeInsets.only(left: TSizes.sm/2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TProductTitleText(
-                    title: 'Green Nike Air Shoes',
+                    title: 'Benih Segar Seremban',
                     smallSize: true,
                   ),
-                  SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
             ),
-
-            //TODO: Add Spacer() here to keep the height of each box some in case 1 or 2 lines of headings
-            Spacer(),
-
-            //price row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //price
-                // const Padding(
-                //   padding: EdgeInsets.all(8.0),
-                //   child: TProductPriceText(price: '35.0'),
-                // ),
-
-                //add to cart button
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text('35 Members'),
+                ),
                 Container(
                   decoration: const BoxDecoration(
                     color: TColors.dark,
@@ -107,11 +96,18 @@ class TProductCardVertical extends StatelessWidget {
                       bottomRight: Radius.circular(TSizes.productImageRadius),
                     ),
                   ),
-                  child: const SizedBox(
-                    width: TSizes.iconLg * 1.2,
+                  child: SizedBox(
+                    width: TSizes.iconLg * 1.5,
                     height: TSizes.iconLg * 1.2,
-                    child:
-                        Center(child: Icon(Iconsax.add, color: TColors.white)),
+                    child: Center(
+                      child: Text(
+                        _isJoined ? 'Joined' : 'Join',
+                        style: TextStyle(
+                          color: TColors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -122,4 +118,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-

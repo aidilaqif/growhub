@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/sizes.dart';
 
-class TGridLayout extends StatelessWidget {
-  const TGridLayout({
+class TGridLayoutHorizontal extends StatelessWidget {
+  const TGridLayoutHorizontal({
     super.key,
     required this.itemCount,
     required this.itemBuilder,
-    this.mainAxisExtent = 120,
+    this.mainAxisExtent = 245,
   });
 
   final int itemCount;
@@ -21,7 +21,7 @@ class TGridLayout extends StatelessWidget {
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
+        crossAxisCount: 2,
         mainAxisExtent: mainAxisExtent,
         mainAxisSpacing: TSizes.gridViewSpacing,
         crossAxisSpacing: TSizes.gridViewSpacing,
