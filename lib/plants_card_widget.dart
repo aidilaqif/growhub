@@ -11,10 +11,6 @@ class PlantsCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.only(
-      //   top: 10,
-      //   bottom: 10
-      // ),
       height: 234.8,
       width: 172.4,
       decoration: BoxDecoration(

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:growhub/data/plants.dart';
+import 'package:growhub/inspection_cards_widget.dart';
 import 'package:growhub/plants_card_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
               separatorBuilder: (BuildContext context, int index) => const Divider(),
               itemCount: Plants.plants.length,
               itemBuilder: (BuildContext context, int index) {
-                return PlantsCardWidget(plants: Plants.plants[index]);
+                return InspectionCardsWidget(plants: Plants.plants[index]);
               },
             ),
           ]),
