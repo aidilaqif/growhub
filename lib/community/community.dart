@@ -7,8 +7,8 @@ import 'package:growhub/community/widget/promo_slider.dart';
 import 'package:growhub/community/widget/tappbar.dart';
 import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
-import 'package:growhub/group/list_group.dart';
-import 'package:growhub/seminar/seminar.dart';
+import 'package:growhub/community/group/list_group.dart';
+import 'package:growhub/community/seminar/seminar.dart';
 import 'package:growhub/texts/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {

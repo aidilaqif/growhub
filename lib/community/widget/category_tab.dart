@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/community/model/content.dart';
-import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 
 class TCategoryTab extends StatelessWidget {
