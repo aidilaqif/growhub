@@ -153,7 +153,7 @@ class ProfilePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30)),
                         child: const ListTile(
                           leading: Icon(
-                            Icons.privacy_tip_sharp,
+                            Icons.history_rounded,
                             color: Colors.black,
                           ),
                           title: Text(
