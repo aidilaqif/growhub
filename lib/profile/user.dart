@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -20,21 +21,23 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const Center(
+                Center(
                   child: Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          "Profile",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
+                        FadeInUp(
+                          child: const Text(
+                            "Profile",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                       ],
@@ -51,7 +54,8 @@ class ProfilePage extends StatelessWidget {
                             topLeft: Radius.circular(60),
                             topRight: Radius.circular(60))),
                     child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 70),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 85), // Padding for Height of name
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -70,7 +74,8 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           Positioned.fill(
-            top: 300,
+            //Position efficienly the card
+            top: 350,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Expanded(
@@ -185,7 +190,8 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          Column(
+            //column for Circle Avatar
             children: [
               SizedBox(
                 height: 90,
@@ -195,9 +201,17 @@ class ProfilePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      maxRadius: 65,
-                      backgroundImage: AssetImage("assets/images/cili1.jpeg"),
+                    Container(
+                      padding: const EdgeInsets.all(1),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              color: Colors.yellow.shade600, width: 3)),
+                      child: CircleAvatar(
+                        maxRadius: 65,
+                        backgroundImage: AssetImage("assets/images/cili1.jpeg"),
+                        backgroundColor: Colors.black,
+                      ),
                     )
                   ],
                 ),
