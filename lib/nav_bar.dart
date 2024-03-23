@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:growhub/community/community.dart';
 import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
-import 'package:growhub/profile/user.dart';
+import 'package:growhub/profile/profile_page.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});

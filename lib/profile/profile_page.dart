@@ -1,7 +1,10 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:growhub/profile/data/history_data.dart';
 import 'package:growhub/profile/editprofile.dart';
+import 'package:growhub/profile/history_page.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -137,23 +140,31 @@ class ProfilePage extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    Card(
-                      color: Colors.grey,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      child: const ListTile(
-                        leading: Icon(
-                          Icons.privacy_tip_sharp,
-                          color: Colors.black,
-                        ),
-                        title: Text(
-                          'History',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios_outlined,
-                          color: Colors.black54,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HistoryPage()));
+                      },
+                      child: Card(
+                        color: Colors.grey,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        child: const ListTile(
+                          leading: Icon(
+                            Icons.privacy_tip_sharp,
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            'History',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black54,
+                          ),
                         ),
                       ),
                     ),
