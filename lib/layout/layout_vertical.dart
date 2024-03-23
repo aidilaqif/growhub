@@ -6,7 +6,7 @@ class TGridLayoutvertical extends StatelessWidget {
     super.key,
     required this.itemCount,
     required this.itemBuilder,
-    this.mainAxisExtent = 120,
+    this.mainAxisExtent = 320,
   });
 
   final int itemCount;
