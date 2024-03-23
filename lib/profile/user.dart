@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -18,25 +17,22 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
-                Center(
+                const Center(
                   child: Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        FadeInUp(
-                          duration: Duration(milliseconds: 1000),
-                          child: Text(
-                            "Profile",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
-                          ),
+                        Text(
+                          "Profile",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 10,
@@ -45,23 +41,27 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Expanded(
                   child: Container(
                     width: double.maxFinite,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(60),
                             topRight: Radius.circular(60))),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 75),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 70),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text("Samad Said",
                                 style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold))
+                                    fontSize: 30, fontWeight: FontWeight.bold)),
+                            Text(
+                              "10 years experience in MARDI\n        Aim to be different",
+                              style: TextStyle(fontSize: 20),
+                            )
                           ]),
                     ),
                   ),
@@ -69,7 +69,123 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          Column(
+          Positioned.fill(
+            top: 300,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: Expanded(
+                child: ListView(
+                  children: [
+                    Card(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.person_2_outlined,
+                          color: Colors.black,
+                        ),
+                        title: Text(
+                          'Edit Profile',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Card(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.question_mark_rounded,
+                          color: Colors.black,
+                        ),
+                        title: Text(
+                          'FAQ',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Card(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.privacy_tip_sharp,
+                          color: Colors.black,
+                        ),
+                        title: Text(
+                          'History',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Card(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Row(
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Icon(
+                              Icons.logout,
+                              color: Colors.black,
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text(
+                              'Logout',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // Add your logout functionality here
+                            },
+                            child: const Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const Column(
             children: [
               SizedBox(
                 height: 90,
@@ -78,7 +194,7 @@ class ProfilePage extends StatelessWidget {
                 height: 130,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircleAvatar(
                       maxRadius: 65,
                       backgroundImage: AssetImage("assets/images/cili1.jpeg"),
@@ -92,9 +208,4 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
-
-  Widget buildProfileImage() => CircleAvatar(
-        backgroundColor: Colors.grey.shade800,
-        backgroundImage: AssetImage('assets/images/cili.jpeg'),
-      );
 }
