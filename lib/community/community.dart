@@ -8,6 +8,7 @@ import 'package:growhub/community/widget/tappbar.dart';
 import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/group/list_group.dart';
+import 'package:growhub/seminar/seminar.dart';
 import 'package:growhub/texts/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {
@@ -49,7 +50,11 @@ class CommunityPage extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       TSectionHeading(
-                          title: 'Sharing Session', onPressed: () {}),
+                          title: 'Sharing Session', onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SeminarList()),
+                          );}),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
                       const TPromoSlider(banners: [
                         TImages.promo1,
