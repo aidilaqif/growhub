@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/sizes.dart';
-import 'package:growhub/data/group_item.dart';
+import 'package:growhub/data/sharing_session_item.dart';
 import 'package:growhub/group/widget/group_card.dart';
 import 'package:growhub/layout/layout_horizontal.dart';
 
-class GroupList extends StatelessWidget {
-   GroupList({Key? key});
+class SeminarList extends StatelessWidget {
+   SeminarList({Key? key});
 
 
   @override
@@ -18,7 +18,7 @@ class GroupList extends StatelessWidget {
             Navigator.pop(context); // Navigate back to the previous screen
           },
         ),
-        title: const Text('Group List'),
+        title: const Text('Sharing Session'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -30,13 +30,13 @@ class GroupList extends StatelessWidget {
                 children: [
                   // Product popular
                   TGridLayoutHorizontal(
-                    itemCount: groups.length,
+                    itemCount: sessions.length,
                     itemBuilder: (_, index) {
-                      final group = groups[index];
+                      final session = sessions[index];
                       return GroupCard(
-                        groupName: group['name'],
-                        memberCount: group['memberCount'],
-                        imageUrl: group['imageUrl'],
+                        groupName: session['name'],
+                        memberCount: session['memberCount'],
+                        imageUrl: session['imageUrl'],
                       );
                     },
                   ),

@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/colors.dart';
-import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
 
-class TProductCardVertical extends StatefulWidget {
-  const TProductCardVertical({
+class GroupCard extends StatefulWidget {
+  const GroupCard({
     Key? key,
-    required this.groupName,
-    required this.memberCount,
+    required this.seminarTitle,
+    required this.platform,
     required this.imageUrl,
+
   }) : super(key: key);
 
-  final String groupName;
-  final int memberCount;
+  final String seminarTitle;
+  final int platform;
   final String imageUrl;
 
   @override
-  _TProductCardVerticalState createState() => _TProductCardVerticalState();
+  _GroupCardState createState() => _GroupCardState();
 }
 
-class _TProductCardVerticalState extends State<TProductCardVertical> {
+class _GroupCardState extends State<GroupCard> {
   bool _isJoined = false;
 
   @override

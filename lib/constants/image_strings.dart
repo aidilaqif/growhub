@@ -9,7 +9,7 @@ class TImages {
   static const String promo2 = "assets/images/poster2.png";
   static const String promo3 = "assets/images/poster3.png";
 
-    static const String group1 = "assets/images/group1.png";
+   static const String group1 = "assets/images/group1.png";
 
 
 }
