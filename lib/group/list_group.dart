@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/custom_shapes/product_card_vertical.dart';
+import 'package:growhub/data/group_data.dart';
 import 'package:growhub/layout/layout_horizontal.dart';
 
 class GroupList extends StatelessWidget {
-  const GroupList({super.key});
+   GroupList({Key? key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
         ),
-        title: Text('Group List'),
+        title: const Text('Group List'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,8 +30,15 @@ class GroupList extends StatelessWidget {
                 children: [
                   // Product popular
                   TGridLayoutHorizontal(
-                    itemCount: 6,
-                    itemBuilder: (_, index) => const TProductCardVertical(),
+                    itemCount: groups.length,
+                    itemBuilder: (_, index) {
+                      final group = groups[index];
+                      return TProductCardVertical(
+                        groupName: group['name'],
+                        memberCount: group['memberCount'],
+                        imageUrl: group['imageUrl'],
+                      );
+                    },
                   ),
                 ],
               ),

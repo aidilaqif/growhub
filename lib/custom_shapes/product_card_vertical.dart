@@ -7,7 +7,16 @@ import 'package:growhub/containers/rounded_container.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
 
 class TProductCardVertical extends StatefulWidget {
-  const TProductCardVertical({Key? key}) : super(key: key);
+  const TProductCardVertical({
+    Key? key,
+    required this.groupName,
+    required this.memberCount,
+    required this.imageUrl,
+  }) : super(key: key);
+
+  final String groupName;
+  final int memberCount;
+  final String imageUrl;
 
   @override
   _TProductCardVerticalState createState() => _TProductCardVerticalState();
@@ -33,46 +42,26 @@ class _TProductCardVerticalState extends State<TProductCardVertical> {
         ),
         child: Column(
           children: [
-            const TRoundedContainer(
+            TRoundedContainer(
               height: 180,
               padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: Colors.white,
               child: Stack(
                 children: [
                   TRoundedImage(
-                      imageUrl: TImages.group1, applyImageRadius: true),
-                  // Positioned(
-                  //   top: 12,
-                  //   child: TRoundedContainer(
-                  //     radius: TSizes.sm,
-                  //     backgroundColor: TColors.secondary.withOpacity(0.8),
-                  //     padding: const EdgeInsets.symmetric(
-                  //         horizontal: TSizes.sm, vertical: TSizes.xs),
-                  //     child: Text('25%',
-                  //         style: Theme.of(context)
-                  //             .textTheme
-                  //             .labelLarge!
-                  //             .apply(color: TColors.black)),
-                  //   ),
-                  // ),
-                  // Positioned(
-                  //   top: 0,
-                  //   right: 0,
-                  //   child: TCircularIcon(
-                  //     icon: Iconsax.heart5,
-                  //     color: Colors.red,
-                  //   ),
-                  // )
+                    imageUrl: widget.imageUrl, // Pass the imageUrl directly
+                    applyImageRadius: true,
+                  ),
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: TSizes.sm/2),
+             Padding(
+              padding: EdgeInsets.only(left: TSizes.sm / 2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TProductTitleText(
-                    title: 'Benih Segar Seremban',
+                    title: widget.groupName,
                     smallSize: true,
                   ),
                 ],
@@ -81,27 +70,36 @@ class _TProductCardVerticalState extends State<TProductCardVertical> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text('35 Members'),
+                  child: Text('${widget.memberCount} Members'),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isJoined = !_isJoined;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _isJoined
+                          ? Color.fromARGB(255, 1, 30, 99)
+                          : const Color.fromARGB(255, 105, 129, 246),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(TSizes.productImageRadius),
+                      ),
                     ),
-                  ),
-                  child: SizedBox(
-                    width: TSizes.iconLg * 1.5,
-                    height: TSizes.iconLg * 1.2,
-                    child: Center(
-                      child: Text(
-                        _isJoined ? 'Joined' : 'Join',
-                        style: TextStyle(
-                          color: TColors.white,
-                          fontSize: 12,
+                    child: SizedBox(
+                      width: TSizes.iconLg * 1.5,
+                      height: TSizes.iconLg * 1.2,
+                      child: Center(
+                        child: Text(
+                          _isJoined ? 'Joined' : 'Join',
+                          style: const TextStyle(
+                            color: TColors.white,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
                     ),

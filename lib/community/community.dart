@@ -65,7 +65,7 @@ class CommunityPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const GroupList()),
+                                builder: (context) => GroupList()),
                           );
                         },
                       ),
