@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:growhub/profile/editprofile.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -81,23 +83,31 @@ class ProfilePage extends StatelessWidget {
               child: Expanded(
                 child: ListView(
                   children: [
-                    Card(
-                      color: Colors.grey,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      child: const ListTile(
-                        leading: Icon(
-                          Icons.person_2_outlined,
-                          color: Colors.black,
-                        ),
-                        title: Text(
-                          'Edit Profile',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios_outlined,
-                          color: Colors.black54,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditProfilePage()));
+                      },
+                      child: Card(
+                        color: Colors.grey,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        child: const ListTile(
+                          leading: Icon(
+                            Icons.person_2_outlined,
+                            color: Colors.black,
+                          ),
+                          title: Text(
+                            'Edit Profile',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black54,
+                          ),
                         ),
                       ),
                     ),
@@ -193,7 +203,7 @@ class ProfilePage extends StatelessWidget {
           Column(
             //column for Circle Avatar
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 90,
               ),
               SizedBox(
@@ -207,7 +217,7 @@ class ProfilePage extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(
                               color: Colors.yellow.shade600, width: 3)),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         maxRadius: 65,
                         backgroundImage: AssetImage("assets/images/cili1.jpeg"),
                         backgroundColor: Colors.black,
