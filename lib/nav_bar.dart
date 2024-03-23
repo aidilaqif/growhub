@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/add_plant/page/add_plant_page.dart';
 import 'package:growhub/community/community.dart';
 import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
@@ -51,6 +52,17 @@ class _NavBarState extends State<NavBar> {
           ),
           NavigationDestination(
             selectedIcon: Icon(
+              Icons.add,
+              size: 40,
+            ),
+            icon: Icon(
+              Icons.add,
+              size: 40,
+            ),
+            label: '',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(
               Icons.group,
               size: 40,
             ),
@@ -77,6 +89,7 @@ class _NavBarState extends State<NavBar> {
         /// Home page
         const HomePage(),
         const DiscoverPage(),
+        const AddPlantPage(),
         const CommunityPage(),
         ProfilePage(),
       ][currentPageIndex],
