@@ -22,12 +22,12 @@ class CommunityPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Community",
-            style: TextStyle(
-                fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          actions: [
+            title: const Text(
+          "Community",
+          style: TextStyle(
+              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+            actions: [
             TNotiIcon(
               onPressed: () {},
               iconColor: Colors.white,
@@ -50,14 +50,11 @@ class CommunityPage extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       TSectionHeading(
-                          title: 'Sharing Session',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SeminarList()),
-                            );
-                          }),
+                          title: 'Sharing Session', onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SeminarList()),
+                          );}),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
                       const TPromoSlider(banners: [
                         TImages.promo1,
