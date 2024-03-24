@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/pallete.dart';
 
 class AddPlantButtonWidget extends StatelessWidget {
   const AddPlantButtonWidget({super.key});
@@ -10,15 +11,16 @@ class AddPlantButtonWidget extends StatelessWidget {
       width: double.maxFinite,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.green
+        color: Pallete.greenBasic
       ),
       child: TextButton(
         onPressed: (){},
         child: const Text(
           'ADD PLANT',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 18
+            color: Pallete.greenTertiary,
+            fontSize: 18,
+            fontWeight: FontWeight.w800
           ),
         )
       ),

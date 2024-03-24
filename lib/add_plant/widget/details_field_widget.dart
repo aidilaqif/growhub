@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/pallete.dart';
 
 class DetailsFieldWidget extends StatelessWidget {
   final String details;
@@ -12,21 +13,21 @@ class DetailsFieldWidget extends StatelessWidget {
     return Container(
       height:56,
       decoration: BoxDecoration(
-        color: const Color(0XFFE0E4E5),
+        color:Pallete.blackTertiary,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: const Color(0XFF545454),
+          color: Pallete.blackSecondary,
           width: 1
         )
       ),
       child: TextField(
-        style: const TextStyle(color: Colors.black),
-        cursorColor: Colors.black,
+        style: const TextStyle(color:Pallete.blackPrimary),
+        cursorColor: Pallete.blackPrimary,
         decoration: InputDecoration(
           hintText: details,
           hintStyle: const TextStyle(
             fontSize: 15,
-            color: Color(0XFF545454)
+            color:Pallete.blackSecondary
           ),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(horizontal: 30),

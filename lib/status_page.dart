@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/pallete.dart';
 import 'package:growhub/status_items_widget.dart';
 
 import 'data/plants.dart';
@@ -15,26 +16,29 @@ class StatusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 30,
-        backgroundColor: Colors.white54,
+        toolbarHeight: 50,
+        backgroundColor: Pallete.greenBasic,
         leading: Builder(
           builder: (BuildContext context){
             return IconButton(
               onPressed: (){
                 Navigator.pop(context);
               },
-              icon: const Icon(Icons.arrow_back_ios),
-              );
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Pallete.greenTertiary,
+              ),
+            );
           }
         ),
         title: const Text(
           "Status",
           style: TextStyle(
             fontSize: 30,
-            color: Colors.black,
+            color: Pallete.greenTertiary,
             fontWeight: FontWeight.bold,
           ),
-          ),
+        ),
       ),
       body: Column(
         children: [

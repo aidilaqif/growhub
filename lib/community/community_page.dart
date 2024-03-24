@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/community/widget/categories.dart';
 import 'package:growhub/community/widget/category_tab.dart';
-import 'package:growhub/community/widget/noti_icon.dart';
 import 'package:growhub/community/widget/post.dart';
 import 'package:growhub/community/widget/promo_slider.dart';
 import 'package:growhub/community/widget/tappbar.dart';
@@ -9,6 +8,7 @@ import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/community/group/list_group.dart';
 import 'package:growhub/community/seminar/seminar.dart';
+import 'package:growhub/pallete.dart';
 import 'package:growhub/texts/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {
@@ -22,17 +22,15 @@ class CommunityPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            title: const Text(
-          "Community",
-          style: TextStyle(
-              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-                 actions: [
-            TNotiIcon(
-              onPressed: () {},
-              iconColor: Colors.white,
-            ),
-          ],
+          toolbarHeight: 50,
+          backgroundColor: Pallete.greenBasic,
+          title: const Text(
+            "Community",
+            style: TextStyle(
+                fontSize: 30,
+                color: Pallete.greenTertiary,
+                fontWeight: FontWeight.bold),
+          ),
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
@@ -42,19 +40,23 @@ class CommunityPage extends StatelessWidget {
                 pinned: true,
                 floating: true,
                 backgroundColor: Colors.white,
-                expandedHeight: 580,
+                expandedHeight:
+                    MediaQuery.of(context).size.height - kToolbarHeight,
                 flexibleSpace: Padding(
-                  padding: EdgeInsets.all(TSizes.defaultSpace),
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       TSectionHeading(
-                          title: 'Sharing Session', onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SeminarList()),
-                          );}),
+                          title: 'Sharing Session',
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SeminarList()),
+                            );
+                          }),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
                       const TPromoSlider(banners: [
                         TImages.promo1,
@@ -82,6 +84,26 @@ class CommunityPage extends StatelessWidget {
                       // ),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
                       const TCommunityPost(),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const SizedBox(
+                          height: 30,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Scroll up to check posting",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Pallete.blackSecondary),
+                              ),
+                              Icon(
+                                Icons.arrow_upward_rounded,
+                                color: Pallete.blackSecondary,
+                              )
+                            ],
+                          ))
                     ],
                   ),
                 ),

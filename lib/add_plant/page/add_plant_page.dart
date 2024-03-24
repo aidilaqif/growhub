@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:growhub/add_plant/widget/add_plant_button_widget.dart';
 import 'package:growhub/add_plant/widget/add_plant_image_widget.dart';
 import 'package:growhub/add_plant/widget/details_field_widget.dart';
+import 'package:growhub/pallete.dart';
 
 class AddPlantPage extends StatelessWidget {
   const AddPlantPage({super.key});
@@ -10,15 +11,14 @@ class AddPlantPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 30,
-        backgroundColor: Colors.white54,
+        toolbarHeight: 50,
+        backgroundColor: Pallete.greenBasic,
         title: const Text(
           "Add Plant",
           style: TextStyle(
-            fontSize: 30,
-            color: Colors.black,
-            fontWeight: FontWeight.bold
-          ),
+              fontSize: 30,
+              color: Pallete.greenTertiary,
+              fontWeight: FontWeight.bold),
         ),
       ),
       body: const SingleChildScrollView(
