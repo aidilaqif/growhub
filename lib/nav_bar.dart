@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/add_plant/page/add_plant_page.dart';
-import 'package:growhub/community/community_page.dart';
+import 'package:growhub/community/community.dart';
 import 'package:growhub/discover_page.dart';
 import 'package:growhub/home_page.dart';
 import 'package:growhub/pallete.dart';
