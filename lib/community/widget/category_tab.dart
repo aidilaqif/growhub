@@ -15,18 +15,7 @@ class TCategoryTab extends StatelessWidget {
             padding: EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
-                //Brand
                 MessagePosted(),
-                // TBrandShowcase(images: [
-                //   TImages.promo1,
-                //   TImages.promo2,
-                //   TImages.promo3
-                // ]),
-                //   TBrandShowcase(images: [
-                //   TImages.promo1,
-                //   TImages.promo2,
-                //   TImages.promo3
-                // ]),
               ],
             ),
           ),

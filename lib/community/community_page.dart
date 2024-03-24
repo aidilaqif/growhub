@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/community/widget/categories.dart';
-import 'package:growhub/community/widget/category_tab.dart';
-import 'package:growhub/community/widget/noti_icon.dart';
-import 'package:growhub/community/widget/post.dart';
-import 'package:growhub/community/widget/promo_slider.dart';
-import 'package:growhub/community/widget/tappbar.dart';
-import 'package:growhub/constants/image_strings.dart';
-import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/community/group/list_group.dart';
 import 'package:growhub/community/seminar/seminar.dart';
+import 'package:growhub/community/widget/categories.dart';
+import 'package:growhub/community/widget/category_tab.dart';
+import 'package:growhub/community/widget/post.dart';
+import 'package:growhub/community/widget/promo_slider.dart';
+import 'package:growhub/constants/image_strings.dart';
+import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/pallete.dart';
 import 'package:growhub/style/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {
-  const CommunityPage({super.key});
+  const CommunityPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final txtTheme = Theme.of(context).textTheme;
-
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -28,9 +24,10 @@ class CommunityPage extends StatelessWidget {
           title: const Text(
             "Community",
             style: TextStyle(
-                fontSize: 30,
-                color: Pallete.greenTertiary,
-                fontWeight: FontWeight.bold),
+              fontSize: 30,
+              color: Pallete.greenTertiary,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         body: NestedScrollView(
@@ -41,8 +38,7 @@ class CommunityPage extends StatelessWidget {
                 pinned: true,
                 floating: true,
                 backgroundColor: Colors.white,
-                expandedHeight:
-                    MediaQuery.of(context).size.height - kToolbarHeight,
+                expandedHeight: MediaQuery.of(context).size.height - kToolbarHeight,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
@@ -50,66 +46,58 @@ class CommunityPage extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       TSectionHeading(
-                          title: 'Sharing Session',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SeminarList()),
-                            );
-                          }),
+                        title: 'Sharing Session',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const SeminarList()),
+                          );
+                        },
+                      ),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
-                      const TPromoSlider(banners: [
+                      TPromoSlider(banners: [
                         TImages.promo1,
                         TImages.promo2,
-                        TImages.promo3
+                        TImages.promo3,
                       ]),
                       const SizedBox(height: TSizes.spaceBtwSections / 10),
-
                       TSectionHeading(
                         title: 'Group',
                         onPressed: () {
-                          // Navigate to the desired page when "Group" section heading is clicked
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => GroupList()),
+                            MaterialPageRoute(builder: (context) => GroupList()),
                           );
                         },
                       ),
                       DashboardCategories(
-                        txtTheme: txtTheme,
+                        txtTheme: Theme.of(context).textTheme,
                         context: context,
                       ),
-
-                      // ),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
-                      const TCommunityPost(),
-                      const SizedBox(
-                        height: 30,
+                      TCommunityPost(),
+                      const SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Scroll up to check posting",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Pallete.blackSecondary,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_upward_rounded,
+                            color: Pallete.blackSecondary,
+                          ),
+                        ],
                       ),
-                      const SizedBox(
-                          height: 30,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Scroll up to check posting",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: Pallete.blackSecondary),
-                              ),
-                              Icon(
-                                Icons.arrow_upward_rounded,
-                                color: Pallete.blackSecondary,
-                              )
-                            ],
-                          ))
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),
-                //Tabs
-                bottom: const TTabBar(
+                bottom: const TabBar(
                   tabs: [
                     Tab(child: Text('Posting')),
                     Tab(child: Text('My Posting')),

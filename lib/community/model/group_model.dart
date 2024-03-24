@@ -15,7 +15,7 @@ class DashboardCategoriesModel {
 
   static List<DashboardCategoriesModel> list(BuildContext context) {
     return [
-      DashboardCategoriesModel("P", "Petani Lama", "more", null),
+      DashboardCategoriesModel("P", "Petani Lama", "More", null),
       DashboardCategoriesModel(
         "H",
         "Hobi Bercucuk Tanam",

@@ -27,11 +27,9 @@ class _MessagePostedState extends State<MessagePosted> {
         children: [
           const Column(
             children: [
-              // Brand with product count
               OtherPosting(showBorder: false),
               SizedBox(height: TSizes.spaceBtwItems),
-              // Brand top 3 product image
-              // Row(children: images.map((image) => brandTopProductImageWidget(image, context)).toList()),
+
             ],
           ),
           Positioned(
