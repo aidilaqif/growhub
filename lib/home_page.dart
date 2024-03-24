@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:growhub/dashboard_page.dart';
 import 'package:growhub/data/plants.dart';
 import 'package:growhub/inspection_cards_widget.dart';
+import 'package:growhub/pallete.dart';
 import 'package:growhub/plants_card_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,23 +19,26 @@ class _HomePageState extends State<HomePage> {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            toolbarHeight: 60,
-            backgroundColor: Colors.white54,
+            toolbarHeight: 50,
+            backgroundColor: Pallete.greenBasic,
             title: const Text(
               "GrowHub",
               style: TextStyle(
                   fontSize: 30,
-                  color: Colors.black,
+                  color: Pallete.greenTertiary,
                   fontWeight: FontWeight.bold),
             ),
-            bottom: const TabBar(tabs: [
-              Tab(
-                text: 'All',
-              ),
-              Tab(
-                text: 'Inspection',
-              )
-            ]),
+            bottom: const TabBar(
+              tabs: [
+                Tab(
+                  text: 'All',
+                ),
+                Tab(
+                  text: 'Inspection',
+                )
+              ],
+              labelColor: Pallete.blackTertiary,
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -180,7 +180,7 @@ class Plants {
       daysToHarvest: '90',
       currentHumidity: '49',
       currentpH: '7',
-      currentWeather: 'Partial Cloudy',
+      currentWeather: 'Cloudy',
       currentAirMoisture: '68',
       inspections1: "Check for pests and diseases",
       inspections2: "Humidity within optimal range",
