@@ -10,6 +10,9 @@ class TImages {
   static const String promo3 = "assets/images/poster3.png";
 
    static const String group1 = "assets/images/group1.png";
+  static const String logo1 = "assets/images/logo1.png";
+    static const String facebook = "assets/images/facebook-icon.png";
+  static const String google = "assets/images/google-icon.png";
 
 
 }

@@ -9,7 +9,7 @@ import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/community/group/list_group.dart';
 import 'package:growhub/community/seminar/seminar.dart';
-import 'package:growhub/texts/section_heading.dart';
+import 'package:growhub/style/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {
   const CommunityPage({super.key});
@@ -27,7 +27,7 @@ class CommunityPage extends StatelessWidget {
           style: TextStyle(
               fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
         ),
-                 actions: [
+            actions: [
             TNotiIcon(
               onPressed: () {},
               iconColor: Colors.white,
