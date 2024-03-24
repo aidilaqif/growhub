@@ -77,16 +77,14 @@ class _SeminarCardState extends State<SeminarCard> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Platform: ${widget.platform}',
-                      style: const TextStyle(
-                        color: Pallete.blackBasic
-                      ),
+                      style: const TextStyle(color: Pallete.blackBasic),
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm /10),
+              padding: const EdgeInsets.only(left: TSizes.sm / 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -94,9 +92,7 @@ class _SeminarCardState extends State<SeminarCard> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Adress: ${widget.address}',
-                      style: const TextStyle(
-                        color: Pallete.blackPrimary
-                      ),
+                      style: const TextStyle(color: Pallete.blackPrimary),
                     ),
                   ),
                 ],
@@ -112,32 +108,28 @@ class _SeminarCardState extends State<SeminarCard> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: _isJoined
-                        ? Pallete.greenTertiary
-                        : Pallete.greenPrimary,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                    border: Border.all(
-                      width: 1,
                       color: _isJoined
-                        ? Pallete.greenPrimary
-                        : Pallete.greenTertiary
-                    )
-                  ),
+                          ? Pallete.greenTertiary
+                          : Pallete.greenPrimary,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(TSizes.productImageRadius),
+                      ),
+                      border: Border.all(
+                          width: 1,
+                          color: _isJoined
+                              ? Pallete.greenPrimary
+                              : Pallete.greenTertiary)),
                   child: SizedBox(
                     width: TSizes.iconLg * 2.0,
                     height: TSizes.iconLg * 1.2,
                     child: Center(
                       child: Text(
-                        _isJoined
-                        ? 'Requested'
-                        : 'Request',
+                        _isJoined ? 'Requested' : 'Request',
                         style: TextStyle(
                           color: _isJoined
-                          ? Pallete.greenPrimary
-                          : Pallete.greenTertiary,
+                              ? Pallete.greenPrimary
+                              : Pallete.greenTertiary,
                           fontSize: 12,
                         ),
                       ),

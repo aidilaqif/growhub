@@ -10,7 +10,6 @@ import 'package:growhub/custom_shapes/card_text_verification.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
 import 'package:iconsax/iconsax.dart';
 
-
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key});
 
@@ -36,7 +35,8 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   ///Thumbnail image
-                  const TRoundedImage(imageUrl: TImages.promo1, applyImageRadius: true),
+                  const TRoundedImage(
+                      imageUrl: TImages.promo1, applyImageRadius: true),
 
                   ///Sale tag
                   Positioned(
@@ -80,7 +80,9 @@ class TProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(title: 'Nike',),
+                  TBrandTitleWithVerifiedIcon(
+                    title: 'Nike',
+                  ),
                 ],
               ),
             ),
@@ -122,4 +124,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-

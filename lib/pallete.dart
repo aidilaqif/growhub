@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Pallete {
-
   //black Color
   static const Color blackBasic = Color(0xFF263238);
   static const Color blackPrimary = Color(0xFF263238);

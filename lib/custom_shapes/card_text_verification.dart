@@ -4,7 +4,6 @@ import 'package:growhub/constants/enums.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 
-
 class TBrandTitleWithVerifiedIcon extends StatelessWidget {
   const TBrandTitleWithVerifiedIcon({
     super.key,

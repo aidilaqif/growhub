@@ -1,4 +1,3 @@
-
 final List<Map<String, dynamic>> groups = [
   {
     'name': 'Petani Lama',
@@ -30,5 +29,4 @@ final List<Map<String, dynamic>> groups = [
     'memberCount': 453,
     'imageUrl': 'assets/images/group6.png', // Replace with your image path
   },
-  
 ];

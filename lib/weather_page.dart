@@ -10,18 +10,14 @@ class WeatherPage extends StatelessWidget {
       width: double.maxFinite,
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(
-          top: 30
-        ),
+        padding: const EdgeInsets.only(top: 30),
         child: Container(
           height: double.maxFinite,
           width: double.maxFinite,
           decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/weather.jpeg'),
-              fit: BoxFit.cover
-            )
-          ),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/weather.jpeg'),
+                  fit: BoxFit.cover)),
         ),
       ),
     );

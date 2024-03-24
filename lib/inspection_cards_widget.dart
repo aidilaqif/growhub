@@ -12,12 +12,7 @@ class InspectionCardsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        top: 33,
-        left: 13,
-        right: 19,
-        bottom: 10
-      ),
+      padding: const EdgeInsets.only(top: 33, left: 13, right: 19, bottom: 10),
       height: 199,
       width: 384.5,
       decoration: BoxDecoration(
@@ -44,9 +39,8 @@ class InspectionCardsWidget extends StatelessWidget {
                     ),
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage(plants.plantImage),
-                      fit: BoxFit.cover
-                    ),
+                        image: AssetImage(plants.plantImage),
+                        fit: BoxFit.cover),
                   ),
                 ),
                 //plantName

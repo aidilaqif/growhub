@@ -7,7 +7,6 @@ import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/circular_container.dart';
 import 'package:growhub/containers/image_container.dart';
 
-
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
     super.key,
@@ -22,7 +21,8 @@ class TPromoSlider extends StatelessWidget {
         CarouselSlider(
           options: CarouselOptions(
               viewportFraction: 1,
-              onPageChanged: (index, _) => controller.updatePageIndicator(index)),
+              onPageChanged: (index, _) =>
+                  controller.updatePageIndicator(index)),
           items: banners.map((url) => TRoundedImage(imageUrl: url)).toList(),
         ),
         const SizedBox(height: TSizes.spaceBtwItems),

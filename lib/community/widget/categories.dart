@@ -54,7 +54,7 @@ class DashboardCategories extends StatelessWidget {
                           list[index].heading,
                           style: TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.bold, 
+                            fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),

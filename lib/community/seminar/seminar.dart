@@ -8,7 +8,6 @@ import 'package:growhub/pallete.dart';
 class SeminarList extends StatelessWidget {
   const SeminarList({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
