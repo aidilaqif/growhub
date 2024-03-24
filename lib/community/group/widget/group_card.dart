@@ -83,8 +83,8 @@ class _GroupCardState extends State<GroupCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: _isJoined
-                        ? Pallete.widgetColorPrimary
-                        : Pallete.widgetColorSecondary,
+                          ? Pallete.greenTertiary
+                          : Pallete.greenPrimary,
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(TSizes.cardRadiusMd),
                         bottomRight: Radius.circular(TSizes.productImageRadius),
@@ -96,8 +96,10 @@ class _GroupCardState extends State<GroupCard> {
                       child: Center(
                         child: Text(
                           _isJoined ? 'Joined' : 'Join',
-                          style: const TextStyle(
-                            color: TColors.white,
+                          style: TextStyle(
+                            color: _isJoined
+                                ? Pallete.greenPrimary
+                                : Pallete.greenTertiary,
                             fontSize: 12,
                           ),
                         ),

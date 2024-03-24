@@ -9,19 +9,16 @@ class AddPlantButtonWidget extends StatelessWidget {
       height: 56,
       width: double.maxFinite,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.green
-      ),
+          borderRadius: BorderRadius.circular(10), color: Pallete.greenBasic),
       child: TextButton(
-        onPressed: (){},
-        child: const Text(
-          'ADD PLANT',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18
-          ),
-        )
-      ),
+          onPressed: () {},
+          child: const Text(
+            'ADD PLANT',
+            style: TextStyle(
+                color: Pallete.greenTertiary,
+                fontSize: 18,
+                fontWeight: FontWeight.w800),
+          )),
     );
   }
 }

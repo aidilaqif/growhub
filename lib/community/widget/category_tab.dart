@@ -27,7 +27,6 @@ class TCategoryTab extends StatelessWidget {
                 //   TImages.promo2,
                 //   TImages.promo3
                 // ]),
-
               ],
             ),
           ),

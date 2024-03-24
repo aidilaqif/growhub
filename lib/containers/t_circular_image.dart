@@ -4,14 +4,14 @@ import 'package:growhub/constants/sizes.dart';
 class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key,
-    this.fit, 
-    required this.image, 
-    this.isNetworkImage = false, 
-    this.overLayColor, 
-    this.backgroundColor, 
-    this.width = 56, 
-    this.height = 56, 
-    this.padding = TSizes.sm, 
+    this.fit,
+    required this.image,
+    this.isNetworkImage = false,
+    this.overLayColor,
+    this.backgroundColor,
+    this.width = 56,
+    this.height = 56,
+    this.padding = TSizes.sm,
   });
 
   final BoxFit? fit;
@@ -33,10 +33,11 @@ class TCircularImage extends StatelessWidget {
       ),
       child: Image(
         fit: fit,
-        image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+        image: isNetworkImage
+            ? NetworkImage(image)
+            : AssetImage(image) as ImageProvider,
         color: overLayColor,
       ),
-    
     );
   }
 }

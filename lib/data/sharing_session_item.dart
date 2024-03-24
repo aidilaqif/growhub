@@ -1,4 +1,3 @@
-
 final List<Map<String, dynamic>> sessions = [
   {
     'name': 'Petani Lama',
@@ -24,7 +23,7 @@ final List<Map<String, dynamic>> sessions = [
     'address': 'Dewan Serbaguna Cempaka',
     'imageUrl': 'assets/images/poster4.png', // Replace with your image path
   },
-    {
+  {
     'name': 'Ladang di Melaka',
     'platform': 'Online',
     'address': 'Google Meet',

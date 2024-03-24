@@ -7,7 +7,6 @@ import 'package:growhub/layout/layout_vertical.dart';
 class SeminarList extends StatelessWidget {
    SeminarList({Key? key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

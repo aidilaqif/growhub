@@ -30,18 +30,15 @@ class PlantsCardWidget extends StatelessWidget {
               ),
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: AssetImage(plants.plantImage),
-                fit: BoxFit.cover
-              ),
+                  image: AssetImage(plants.plantImage), fit: BoxFit.cover),
             ),
           ),
           Text(
             plants.plantName,
             style: const TextStyle(
-              fontSize: 13,
-              color: Color(0XFF010101),
-              fontWeight: FontWeight.bold
-            ),
+                fontSize: 13,
+                color: Color(0XFF010101),
+                fontWeight: FontWeight.bold),
           ),
           Text(
             "Tag: ${plants.tagging}",
@@ -54,10 +51,9 @@ class PlantsCardWidget extends StatelessWidget {
           Text(
             "Days until harvest: ${plants.daysToHarvest}",
             style: const TextStyle(
-              fontSize: 9,
-              color: Color(0XFF545454),
-              fontWeight: FontWeight.w500
-            ),
+                fontSize: 9,
+                color: Color(0XFF545454),
+                fontWeight: FontWeight.w500),
           )
         ],
       ),

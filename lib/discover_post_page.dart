@@ -3,10 +3,7 @@ import 'package:growhub/data/discover_items.dart';
 
 class DiscoverPostPage extends StatelessWidget {
   final DiscoverItems discoverItems;
-  const DiscoverPostPage({
-    super.key,
-    required this.discoverItems
-  });
+  const DiscoverPostPage({super.key, required this.discoverItems});
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +11,17 @@ class DiscoverPostPage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 30,
         backgroundColor: Colors.white54,
-        leading: Builder(
-          builder: (BuildContext context){
-            return IconButton(
-              onPressed: (){
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios),
-              );
-          }
-        ),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back_ios),
+          );
+        }),
         title: const Text(
           "",
-          ),
+        ),
       ),
       body: Center(
         child: Padding(
@@ -39,10 +34,9 @@ class DiscoverPostPage extends StatelessWidget {
                 child: Text(
                   discoverItems.title,
                   style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                  ),
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(
@@ -52,12 +46,11 @@ class DiscoverPostPage extends StatelessWidget {
                 height: 203.7,
                 width: 372.2,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: AssetImage(discoverItems.image),
-                    fit: BoxFit.fill,
-                    )
-                ),
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: AssetImage(discoverItems.image),
+                      fit: BoxFit.fill,
+                    )),
               ),
               const SizedBox(
                 height: 20,
@@ -73,11 +66,10 @@ class DiscoverPostPage extends StatelessWidget {
                       child: Text(
                         discoverItems.caption,
                         style: const TextStyle(
-                          fontSize: 14,
-                          color: Color(0XFF545454),
-                          fontWeight: FontWeight.w500
-                        ),
-                        ),
+                            fontSize: 14,
+                            color: Color(0XFF545454),
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),

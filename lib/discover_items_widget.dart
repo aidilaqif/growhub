@@ -10,7 +10,6 @@ class DiscoverItemsWidget extends StatelessWidget {
     required this.discoverItems,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,32 +17,32 @@ class DiscoverItemsWidget extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => DiscoverPostPage(discoverItems: discoverItems,)));
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DiscoverPostPage(
+                        discoverItems: discoverItems,
+                      )));
             },
             child: Container(
               height: 203.7,
               width: 372.2,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage(discoverItems.image),
-                  fit: BoxFit.fill,
-                  )
-              ),
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(discoverItems.image),
+                    fit: BoxFit.fill,
+                  )),
             ),
           ),
           SizedBox(
-            width: 372.2,
-            child: Text(
-              discoverItems.title,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold
-              ),
-            )
-          ),
+              width: 372.2,
+              child: Text(
+                discoverItems.title,
+                style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              )),
           const SizedBox(
             height: 15,
           )

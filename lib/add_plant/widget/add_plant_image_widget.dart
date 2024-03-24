@@ -15,13 +15,12 @@ class AddPlantImageWidget extends StatelessWidget {
             height: 241.9,
             width: 241.9,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: const Color(0XFF545454),
-                width: 4,
-              ),
-              shape: BoxShape.circle,
-              color: const Color(0XFFE0E4E5)
-            ),
+                border: Border.all(
+                  color: Pallete.blackSecondary,
+                  width: 6,
+                ),
+                shape: BoxShape.circle,
+                color: Pallete.blackTertiary),
             child: const Icon(
               Icons.photo_size_select_actual_rounded,
               size: 100,
@@ -38,7 +37,7 @@ class AddPlantImageWidget extends StatelessWidget {
                 color: Colors.green
               ),
               child: IconButton(
-                onPressed: (){},
+                onPressed: () {},
                 icon: const Icon(
                   Icons.add,
                   size: 40,

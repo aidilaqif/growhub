@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 
 class TNotiIcon extends StatelessWidget {
   const TNotiIcon({
     super.key,
-    required this.iconColor, 
+    required this.iconColor,
     required this.onPressed,
   });
 
@@ -15,13 +13,11 @@ class TNotiIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Stack(
       children: [
         IconButton(
             onPressed: () {},
-            icon: Icon(Iconsax.notification_1,
-                 color: Colors.grey)),
+            icon: Icon(Iconsax.notification_1, color: Colors.grey)),
         Positioned(
           right: 0,
           child: Container(
@@ -36,9 +32,7 @@ class TNotiIcon extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .labelLarge!
-                        .apply(
-                            color: Colors.black,
-                            fontSizeFactor: 0.8))),
+                        .apply(color: Colors.black, fontSizeFactor: 0.8))),
           ),
         )
       ],

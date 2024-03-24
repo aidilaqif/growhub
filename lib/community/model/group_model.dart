@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class DashboardCategoriesModel {
   final String title;
   final String heading;
@@ -35,7 +34,6 @@ class DashboardCategoriesModel {
           // Implement navigation logic here when Policy category is clicked
           // For example, you can use Navigator.push to navigate to the Policy screen
           // Example:
-
         },
       ),
       DashboardCategoriesModel("F", "Farmers Johor", "More", null),
