@@ -23,17 +23,15 @@ class CommunityPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 50,
+          backgroundColor: Pallete.greenBasic,
           title: const Text(
             "Community",
             style: TextStyle(
-                fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
+                fontSize: 30,
+                color: Pallete.greenTertiary,
+                fontWeight: FontWeight.bold),
           ),
-          actions: [
-            TNotiIcon(
-              onPressed: () {},
-              iconColor: Colors.white,
-            ),
-          ],
         ),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
@@ -46,7 +44,7 @@ class CommunityPage extends StatelessWidget {
                 expandedHeight:
                     MediaQuery.of(context).size.height - kToolbarHeight,
                 flexibleSpace: Padding(
-                  padding: EdgeInsets.all(TSizes.defaultSpace),
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -57,7 +55,7 @@ class CommunityPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SeminarList()),
+                                  builder: (context) => const SeminarList()),
                             );
                           }),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
@@ -88,7 +86,7 @@ class CommunityPage extends StatelessWidget {
                       const SizedBox(height: TSizes.spaceBtwInputFields),
                       const TCommunityPost(),
                       const SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       const SizedBox(
                           height: 30,

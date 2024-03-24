@@ -1,4 +1,5 @@
 import 'package:growhub/data/status_items.dart';
+import 'package:growhub/pallete.dart';
 
 class Plants {
   final String tagging;
@@ -12,6 +13,7 @@ class Plants {
   final String inspections1;
   final String inspections2;
   final List<StatusItems> statusItems;
+  final statusColor;
 
   Plants(
       {required this.tagging,
@@ -24,55 +26,160 @@ class Plants {
       required this.currentAirMoisture,
       required this.inspections1,
       required this.inspections2,
-      required this.statusItems});
+      required this.statusItems,
+      required this.statusColor});
 
   static List<Plants> plants = [
     Plants(
-        tagging: 'A1',
-        plantName: 'Cili Padi Centil',
-        plantImage: 'assets/images/cili.jpeg',
-        daysToHarvest: '28',
-        currentHumidity: '30',
-        currentpH: '7',
-        currentWeather: 'Rainy',
-        currentAirMoisture: '58',
-        inspections1: "pH drops from 7 to 2",
-        inspections2: "Humidity decrease to 50%",
-        statusItems: [
-          StatusItems(
-              status: 'Crops need 300ml water',
-              date: '12/3/2024',
-              time: '3:00 PM'),
-          StatusItems(
-              status: 'Humidity exceed 80%. Consider reduce watering',
-              date: '12/3/2024',
-              time: '3:00 PM'),
-          StatusItems(
-              status: 'Plants pH is below 6. Consider reduce using pesticides',
-              date: '12/3/2024',
-              time: '3:00 PM'),
-        ]),
+      tagging: 'A1',
+      plantName: 'Cili Padi Centil',
+      plantImage: 'assets/images/cili.jpeg',
+      daysToHarvest: '28',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity decrease to 50%",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 300ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 80%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Plants pH is below 6. Consider reduce using pesticides',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.greenBasic,
+    ),
     Plants(
-        tagging: 'A2',
-        plantName: 'Cili Padi Bara',
-        plantImage: 'assets/images/cili2.jpeg',
-        daysToHarvest: '20',
-        currentHumidity: '30',
-        currentpH: '7',
-        currentWeather: 'Rainy',
-        currentAirMoisture: '58',
-        inspections1: "pH drops from 7 to 2",
-        inspections2: "Humidity exceeds 90% from normal level",
-        statusItems: [
-          StatusItems(
-              status: 'Crops need 100ml water',
-              date: '12/3/2024',
-              time: '3:00 PM'),
-          StatusItems(
-              status: 'Humidity exceed 90%. Consider reduce watering',
-              date: '12/3/2024',
-              time: '3:00 PM'),
-        ]),
+      tagging: 'A2',
+      plantName: 'Cili Padi Bara',
+      plantImage: 'assets/images/cili2.jpeg',
+      daysToHarvest: '20',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity exceeds 90% from normal level",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 100ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 90%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.greenBasic,
+    ),
+    Plants(
+      tagging: 'A3',
+      plantName: 'Cili Padi Centil',
+      plantImage: 'assets/images/cili.jpeg',
+      daysToHarvest: '28',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity decrease to 50%",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 300ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 80%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Plants pH is below 6. Consider reduce using pesticides',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.redBasic,
+    ),
+    Plants(
+      tagging: 'A4',
+      plantName: 'Cili Padi Bara',
+      plantImage: 'assets/images/cili2.jpeg',
+      daysToHarvest: '20',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity exceeds 90% from normal level",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 100ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 90%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.greenBasic,
+    ),
+    Plants(
+      tagging: 'A5',
+      plantName: 'Cili Padi Centil',
+      plantImage: 'assets/images/cili.jpeg',
+      daysToHarvest: '28',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity decrease to 50%",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 300ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 80%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Plants pH is below 6. Consider reduce using pesticides',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.greenBasic,
+    ),
+    Plants(
+      tagging: 'A6',
+      plantName: 'Cili Padi Bara',
+      plantImage: 'assets/images/cili2.jpeg',
+      daysToHarvest: '20',
+      currentHumidity: '30',
+      currentpH: '7',
+      currentWeather: 'Rainy',
+      currentAirMoisture: '58',
+      inspections1: "pH drops from 7 to 2",
+      inspections2: "Humidity exceeds 90% from normal level",
+      statusItems: [
+        StatusItems(
+            status: 'Crops need 100ml water',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+        StatusItems(
+            status: 'Humidity exceed 90%. Consider reduce watering',
+            date: '12/3/2024',
+            time: '3:00 PM'),
+      ],
+      statusColor: Pallete.redBasic,
+    ),
     // Add more items as needed
   ];
 }
