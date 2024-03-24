@@ -22,9 +22,8 @@ class StatusItemsWidget extends StatelessWidget {
             width: 372.2,
             height: 84.6,
             decoration: BoxDecoration(
-              color: const Color(0XFFE0E4E5),
-              borderRadius: BorderRadius.circular(15)
-            ),
+                color: const Color(0XFFE0E4E5),
+                borderRadius: BorderRadius.circular(15)),
             child: Row(
               children: [
                 const SizedBox(
@@ -42,14 +41,13 @@ class StatusItemsWidget extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                   child: const Center(
-                    child: Text(
-                      "i",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0XFF545454),
-                      ),
-                    )
-                  ),
+                      child: Text(
+                    "i",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0XFF545454),
+                    ),
+                  )),
                 ),
                 const SizedBox(
                   width: 14,
@@ -65,10 +63,9 @@ class StatusItemsWidget extends StatelessWidget {
                           child: Text(
                             statusItems.status,
                             style: const TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 15,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -77,11 +74,10 @@ class StatusItemsWidget extends StatelessWidget {
                         child: Text(
                           ('${statusItems.date} ${statusItems.time}'),
                           style: const TextStyle(
-                            fontSize: 10,
-                            color: Color(0XFF545454),
-                            fontWeight: FontWeight.w600
-                          ),
-                          ),
+                              fontSize: 10,
+                              color: Color(0XFF545454),
+                              fontWeight: FontWeight.w600),
+                        ),
                       )
                     ],
                   ),
