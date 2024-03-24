@@ -3,21 +3,35 @@ import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/data/sharing_session_item.dart';
 import 'package:growhub/community/seminar/widget/seminar_card.dart';
 import 'package:growhub/layout/layout_vertical.dart';
+import 'package:growhub/pallete.dart';
 
 class SeminarList extends StatelessWidget {
-   SeminarList({Key? key});
+  const SeminarList({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 50,
+        backgroundColor: Pallete.greenBasic,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Pallete.greenTertiary,
+          ),
           onPressed: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
         ),
-        title: const Text('Sharing Session'),
+        title: const Text(
+          'Sharing Session',
+          style: TextStyle(
+            fontSize: 30,
+            color: Pallete.greenTertiary,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -35,7 +49,7 @@ class SeminarList extends StatelessWidget {
                       return SeminarCard(
                         seminarTitle: session['name'],
                         platform: session['platform'],
-                        address: session['address'],                       
+                        address: session['address'],
                         imageUrl: session['imageUrl'],
                       );
                     },
