@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:growhub/login/login.dart';
+import 'package:growhub/pallete.dart';
 import 'package:growhub/profile/editprofile.dart';
 import 'package:growhub/profile/history_page.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,9 +18,9 @@ class ProfilePage extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-              Colors.orange.shade900,
-              Colors.orange.shade800,
-              Colors.orange.shade400
+              Pallete.greenBasic,
+              Pallete.greenBasic,
+              Pallete.greenBasic
             ])),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
