@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/pallete.dart';
 import 'package:growhub/status_items_widget.dart';
 
 import 'data/plants.dart';

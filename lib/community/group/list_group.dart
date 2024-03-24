@@ -5,7 +5,7 @@ import 'package:growhub/community/group/widget/group_card.dart';
 import 'package:growhub/layout/layout_horizontal.dart';
 
 class GroupList extends StatelessWidget {
-  GroupList({Key? key});
+   GroupList({Key? key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/constants/colors.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
@@ -7,12 +8,12 @@ import 'package:growhub/pallete.dart';
 
 class SeminarCard extends StatefulWidget {
   const SeminarCard({
-    super.key,
+    Key? key,
     required this.seminarTitle,
     required this.platform,
-    required this.imageUrl,
+    required this.imageUrl, 
     required this.address,
-  });
+  }) : super(key: key);
 
   final String seminarTitle;
   final String platform;
@@ -45,7 +46,7 @@ class _SeminarCardState extends State<SeminarCard> {
           children: [
             TRoundedContainer(
               height: 180,
-              padding: const EdgeInsets.all(TSizes.sm),
+              padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: Colors.white,
               child: Stack(
                 children: [
@@ -57,7 +58,7 @@ class _SeminarCardState extends State<SeminarCard> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm / 2),
+              padding: EdgeInsets.only(left: TSizes.sm / 2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -69,9 +70,9 @@ class _SeminarCardState extends State<SeminarCard> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm / 10),
+              padding: EdgeInsets.only(left: TSizes.sm / 10),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,           
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -86,7 +87,7 @@ class _SeminarCardState extends State<SeminarCard> {
             Padding(
               padding: const EdgeInsets.only(left: TSizes.sm / 10),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,           
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),

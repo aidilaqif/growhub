@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/pallete.dart';
 
 class DetailsFieldWidget extends StatelessWidget {
   final String details;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/cam_icon.dart';
 import 'package:growhub/data/plants.dart';
 import 'package:growhub/humidity_page.dart';
 import 'package:growhub/pH_page.dart';
@@ -21,6 +22,12 @@ class DashBoardPage extends StatelessWidget {
           style: TextStyle(
               fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          TCamIcon(
+            onPressed: () {},
+            iconColor: Colors.black,
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

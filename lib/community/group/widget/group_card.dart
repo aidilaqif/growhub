@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growhub/constants/colors.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
@@ -7,11 +8,11 @@ import 'package:growhub/pallete.dart';
 
 class GroupCard extends StatefulWidget {
   const GroupCard({
-    super.key,
+    Key? key,
     required this.groupName,
     required this.memberCount,
     required this.imageUrl,
-  });
+  }) : super(key: key);
 
   final String groupName;
   final int memberCount;
@@ -43,7 +44,7 @@ class _GroupCardState extends State<GroupCard> {
           children: [
             TRoundedContainer(
               height: 180,
-              padding: const EdgeInsets.all(TSizes.sm),
+              padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: Colors.white,
               child: Stack(
                 children: [
@@ -54,8 +55,8 @@ class _GroupCardState extends State<GroupCard> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm / 2),
+             Padding(
+              padding: EdgeInsets.only(left: TSizes.sm / 2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -69,8 +70,8 @@ class _GroupCardState extends State<GroupCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                 Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text('${widget.memberCount} Members'),
                 ),
                 GestureDetector(

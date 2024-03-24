@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/pallete.dart';
 
 class AddPlantButtonWidget extends StatelessWidget {
   const AddPlantButtonWidget({super.key});

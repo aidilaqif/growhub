@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/pallete.dart';
+import 'package:flutter/widgets.dart';
 
 class AddPlantImageWidget extends StatelessWidget {
   const AddPlantImageWidget({super.key});
@@ -24,7 +24,7 @@ class AddPlantImageWidget extends StatelessWidget {
             child: const Icon(
               Icons.photo_size_select_actual_rounded,
               size: 100,
-              color: Pallete.blackSecondary,
+              color: Color(0XFF545454),
             ),
           ),
           Align(
@@ -34,14 +34,14 @@ class AddPlantImageWidget extends StatelessWidget {
               width: 60,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Pallete.greenPrimary,
+                color: Colors.green
               ),
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
                   Icons.add,
                   size: 40,
-                  color: Pallete.greenTertiary,
+                  color: Colors.white,
                 ),
               ),
             ),
