@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:growhub/login/login.dart';
-import 'package:growhub/profile/data/history_data.dart';
 import 'package:growhub/profile/editprofile.dart';
 import 'package:growhub/profile/history_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -115,23 +115,28 @@ class ProfilePage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Card(
-                    color: Colors.grey,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const ListTile(
-                      leading: Icon(
-                        Icons.question_mark_rounded,
-                        color: Colors.black,
-                      ),
-                      title: Text(
-                        'FAQ',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios_outlined,
-                        color: Colors.black54,
+                  GestureDetector(
+                    onTap: () {
+                      _launchFAQURL();
+                    },
+                    child: Card(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.question_mark_rounded,
+                          color: Colors.black,
+                        ),
+                        title: Text(
+                          'FAQ',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
+                        ),
                       ),
                     ),
                   ),
@@ -232,5 +237,15 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _launchFAQURL() async {
+    const url = 'https://www.chillihead.co.za/chilli-faq';
+    if (await canLaunchUrl(Uri.parse(url))) {
+      //Uri.parse is used to ensure secure safetytype
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
