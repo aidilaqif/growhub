@@ -36,7 +36,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           border: Border.all(color: Colors.black, width: 4)),
                       child: const CircleAvatar(
                         maxRadius: 65,
-                        backgroundImage: AssetImage("assets/images/cili1.jpeg"),
+                        backgroundImage: AssetImage("assets/images/samad.jpg"),
                         backgroundColor: Colors.black,
                       ),
                     ),
@@ -77,7 +77,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   )),
               maxLines: 3,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Save button action
@@ -90,7 +90,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 // After saving, you might want to navigate back
                 Navigator.pop(context);
               },
-              child: Text('Save'),
+              child: const Text('Save'),
             ),
           ],
         ),

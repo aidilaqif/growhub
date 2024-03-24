@@ -230,7 +230,7 @@ class ProfilePage extends StatelessWidget {
                               color: Colors.yellow.shade600, width: 3)),
                       child: const CircleAvatar(
                         maxRadius: 65,
-                        backgroundImage: AssetImage("assets/images/cili1.jpeg"),
+                        backgroundImage: AssetImage("assets/images/samad.jpg"),
                         backgroundColor: Colors.black,
                       ),
                     )
