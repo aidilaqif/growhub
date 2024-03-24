@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/constants/text_strings.dart';
 import 'package:growhub/signup/widgets/terms_conditions_checkbox.dart';
@@ -11,10 +9,8 @@ class TSignupForm extends StatelessWidget {
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
-
     return Form(
       child: Column(
         children: [
@@ -40,32 +36,30 @@ class TSignupForm extends StatelessWidget {
             ],
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
-    
+
           /// Username
           TextFormField(
             expands: false,
-            decoration: const InputDecoration( 
+            decoration: const InputDecoration(
                 labelText: TTexts.username,
                 prefixIcon: Icon(Iconsax.user_edit)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
-    
+
           /// Email
           TextFormField(
             decoration: const InputDecoration(
-                labelText: TTexts.email,
-                prefixIcon: Icon(Iconsax.direct)),
+                labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
-    
+
           /// Phone Number
           TextFormField(
             decoration: const InputDecoration(
-                labelText: TTexts.phoneNo,
-                prefixIcon: Icon(Iconsax.call)),
+                labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
-    
+
           /// Password
           TextFormField(
             obscureText: true,
@@ -76,11 +70,11 @@ class TSignupForm extends StatelessWidget {
             ),
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
-    
+
           /// Terms&Conditions CheckBox
           const TTernsAndConditionCheckbox(),
           const SizedBox(height: TSizes.spaceBtwSections),
-    
+
           //signup button
           SizedBox(
             width: double.infinity,
@@ -94,4 +88,3 @@ class TSignupForm extends StatelessWidget {
     );
   }
 }
-

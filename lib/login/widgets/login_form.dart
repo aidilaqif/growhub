@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/constants/text_strings.dart';
-import 'package:growhub/home_page.dart';
 import 'package:growhub/nav_bar.dart';
 import 'package:growhub/pallete.dart';
 import 'package:growhub/signup/signup.dart';
@@ -70,7 +69,7 @@ class TLoginForm extends StatelessWidget {
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  Pallete.widgetColorSecondary, // Background color
+                  Pallete.greenSecondary, // Background color
                 ),
               ),
               child: Text(
@@ -100,7 +99,7 @@ class TLoginForm extends StatelessWidget {
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  Pallete.widgetColorPrimary, // Background color
+                  Pallete.greenBasic, // Background color
                 ),
               ),
               child: Text(

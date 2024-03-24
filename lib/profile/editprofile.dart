@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({super.key});
+
   @override
   _EditProfilePageState createState() => _EditProfilePageState();
 }
@@ -18,7 +19,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -81,8 +82,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
             ElevatedButton(
               onPressed: () {
                 // Save button action
-                String name = _nameController.text;
-                String about = _aboutController.text;
+                // String name = _nameController.text;
+                // String about = _aboutController.text;
 
                 // Handle saving logic here
                 // For example, you can save the data to a database
