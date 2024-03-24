@@ -25,7 +25,7 @@ class PlantsCardWidget extends StatelessWidget {
             width: 109.8,
             decoration: BoxDecoration(
               border: Border.all(
-                color: const Color(0XFF2C855A),
+                color: plants.statusColor,
                 width: 4,
               ),
               shape: BoxShape.circle,
