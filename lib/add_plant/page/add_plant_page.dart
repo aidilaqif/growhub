@@ -1,4 +1,4 @@
-@ -2,43 +2,43 @@
+import 'package:flutter/material.dart';
 import 'package:growhub/add_plant/widget/add_plant_button_widget.dart';
 import 'package:growhub/add_plant/widget/add_plant_image_widget.dart';
 import 'package:growhub/add_plant/widget/details_field_widget.dart';
@@ -42,3 +42,17 @@ class AddPlantPage extends StatelessWidget {
                 DetailsFieldWidget(details: 'Tagging (Ex: A1)'),
                 SizedBox(
                   height: 40,
+                ),
+                DetailsFieldWidget(details: 'Date & Time'),
+                SizedBox(
+                  height: 60,
+                ),
+                AddPlantButtonWidget()
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -9,6 +9,7 @@ import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/community/group/list_group.dart';
 import 'package:growhub/community/seminar/seminar.dart';
+import 'package:growhub/pallete.dart';
 import 'package:growhub/style/section_heading.dart';
 
 class CommunityPage extends StatelessWidget {
@@ -22,12 +23,12 @@ class CommunityPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            title: const Text(
-          "Community",
-          style: TextStyle(
-              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-            actions: [
+          title: const Text(
+            "Community",
+            style: TextStyle(
+                fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+          actions: [
             TNotiIcon(
               onPressed: () {},
               iconColor: Colors.white,
@@ -42,7 +43,8 @@ class CommunityPage extends StatelessWidget {
                 pinned: true,
                 floating: true,
                 backgroundColor: Colors.white,
-                expandedHeight: 580,
+                expandedHeight:
+                    MediaQuery.of(context).size.height - kToolbarHeight,
                 flexibleSpace: Padding(
                   padding: EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
@@ -50,11 +52,14 @@ class CommunityPage extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       TSectionHeading(
-                          title: 'Sharing Session', onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SeminarList()),
-                          );}),
+                          title: 'Sharing Session',
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SeminarList()),
+                            );
+                          }),
                       const SizedBox(height: TSizes.spaceBtwInputFields / 10),
                       const TPromoSlider(banners: [
                         TImages.promo1,
@@ -82,6 +87,26 @@ class CommunityPage extends StatelessWidget {
                       // ),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
                       const TCommunityPost(),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const SizedBox(
+                          height: 30,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Scroll up to check posting",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Pallete.blackSecondary),
+                              ),
+                              Icon(
+                                Icons.arrow_upward_rounded,
+                                color: Pallete.blackSecondary,
+                              )
+                            ],
+                          ))
                     ],
                   ),
                 ),
