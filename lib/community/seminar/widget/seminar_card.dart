@@ -1,5 +1,5 @@
+@ -1,136 +1,155 @@
 import 'package:flutter/material.dart';
-import 'package:growhub/constants/colors.dart';
 import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
@@ -8,12 +8,12 @@ import 'package:growhub/pallete.dart';
 
 class SeminarCard extends StatefulWidget {
   const SeminarCard({
-    Key? key,
+    super.key,
     required this.seminarTitle,
     required this.platform,
-    required this.imageUrl, 
+    required this.imageUrl,
     required this.address,
-  }) : super(key: key);
+  });
 
   final String seminarTitle;
   final String platform;
@@ -46,7 +46,7 @@ class _SeminarCardState extends State<SeminarCard> {
           children: [
             TRoundedContainer(
               height: 180,
-              padding: EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: Colors.white,
               child: Stack(
                 children: [
@@ -58,7 +58,7 @@ class _SeminarCardState extends State<SeminarCard> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: TSizes.sm / 2),
+              padding: const EdgeInsets.only(left: TSizes.sm / 2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -70,30 +70,36 @@ class _SeminarCardState extends State<SeminarCard> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: TSizes.sm / 10),
+              padding: const EdgeInsets.only(left: TSizes.sm / 10),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,           
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text('Platform: ${widget.platform}'),
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Platform: ${widget.platform}',
-                      style: const TextStyle(color: Pallete.blackBasic),
+                      style: const TextStyle(
+                        color: Pallete.blackBasic
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm / 10),
+              padding: const EdgeInsets.only(left: TSizes.sm /10),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,           
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Adress: ${widget.address}',
-                      style: const TextStyle(color: Pallete.blackPrimary),
+                      style: const TextStyle(
+                        color: Pallete.blackPrimary
+                      ),
                     ),
                   ),
                 ],
@@ -109,28 +115,32 @@ class _SeminarCardState extends State<SeminarCard> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
+                    color: _isJoined
+                        ? Pallete.greenTertiary
+                        : Pallete.greenPrimary,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(TSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(TSizes.productImageRadius),
+                    ),
+                    border: Border.all(
+                      width: 1,
                       color: _isJoined
-                          ? Pallete.greenTertiary
-                          : Pallete.greenPrimary,
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(TSizes.cardRadiusMd),
-                        bottomRight: Radius.circular(TSizes.productImageRadius),
-                      ),
-                      border: Border.all(
-                          width: 1,
-                          color: _isJoined
-                              ? Pallete.greenPrimary
-                              : Pallete.greenTertiary)),
+                        ? Pallete.greenPrimary
+                        : Pallete.greenTertiary
+                    )
+                  ),
                   child: SizedBox(
                     width: TSizes.iconLg * 2.0,
                     height: TSizes.iconLg * 1.2,
                     child: Center(
                       child: Text(
-                        _isJoined ? 'Requested' : 'Request',
+                        _isJoined
+                        ? 'Requested'
+                        : 'Request',
                         style: TextStyle(
                           color: _isJoined
-                              ? Pallete.greenPrimary
-                              : Pallete.greenTertiary,
+                          ? Pallete.greenPrimary
+                          : Pallete.greenTertiary,
                           fontSize: 12,
                         ),
                       ),
