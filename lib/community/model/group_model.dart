@@ -16,11 +16,11 @@ class DashboardCategoriesModel {
 
   static List<DashboardCategoriesModel> list(BuildContext context) {
     return [
-      DashboardCategoriesModel("S", "Small Farm", "30 members", null),
+      DashboardCategoriesModel("P", "Petani Lama", "more", null),
       DashboardCategoriesModel(
-        "B",
-        "Benih Mur",
-        "78 members",
+        "H",
+        "Hobi Bercucuk Tanam",
+        "More",
         () {
           // Implement navigation logic here when Policy category is clicked
           // For example, you can use Navigator.push to navigate to the Policy screen
@@ -28,9 +28,9 @@ class DashboardCategoriesModel {
         },
       ),
       DashboardCategoriesModel(
-        "C",
-        "Cili Segar",
-        "67 members",
+        "B",
+        "Benih Sihat Murah",
+        "More",
         () {
           // Implement navigation logic here when Policy category is clicked
           // For example, you can use Navigator.push to navigate to the Policy screen
@@ -38,7 +38,7 @@ class DashboardCategoriesModel {
 
         },
       ),
-      DashboardCategoriesModel("T", "Taman Indah", "More", null),
+      DashboardCategoriesModel("F", "Farmers Johor", "More", null),
     ];
   }
 }

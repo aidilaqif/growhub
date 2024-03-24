@@ -4,6 +4,7 @@ import 'package:growhub/constants/sizes.dart';
 import 'package:growhub/containers/image_container.dart';
 import 'package:growhub/containers/rounded_container.dart';
 import 'package:growhub/custom_shapes/card_title_text.dart';
+import 'package:growhub/pallete.dart';
 
 class GroupCard extends StatefulWidget {
   const GroupCard({
@@ -82,8 +83,8 @@ class _GroupCardState extends State<GroupCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: _isJoined
-                          ? Color.fromARGB(255, 1, 30, 99)
-                          : const Color.fromARGB(255, 105, 129, 246),
+                        ? Pallete.widgetColorPrimary
+                        : Pallete.widgetColorSecondary,
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(TSizes.cardRadiusMd),
                         bottomRight: Radius.circular(TSizes.productImageRadius),
