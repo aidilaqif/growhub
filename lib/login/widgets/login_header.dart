@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:growhub/constants/image_strings.dart';
 import 'package:growhub/constants/sizes.dart';
@@ -14,10 +13,15 @@ class TLoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image(
-          height: 150,
-          image: AssetImage(
-               TImages.logo1),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Image(
+              height: 150,
+              image: AssetImage(TImages.logo1),
+            ),
+          ),
         ),
         Text(TTexts.loginTitle,
             style: Theme.of(context).textTheme.headlineMedium),
