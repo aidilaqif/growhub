@@ -81,12 +81,10 @@ class CommunityPage extends StatelessWidget {
 
                       // ),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
-
                       const TCommunityPost(),
                     ],
                   ),
                 ),
-
                 //Tabs
                 bottom: const TTabBar(
                   tabs: [
@@ -101,7 +99,6 @@ class CommunityPage extends StatelessWidget {
             children: [
               TCategoryTab(),
               TCategoryTab(),
- 
             ],
           ),
         ),

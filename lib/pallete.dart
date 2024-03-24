@@ -19,7 +19,7 @@ class Pallete {
 
   //widget Color
   static const Color widgetColorBasic = Colors.black;
-  static const Color widgettColorPrimary = Color(0xFF33691E);
+  static const Color widgetColorPrimary = Color(0xFF33691E);
   static const Color widgetColorSecondary = Color(0xFF689F38);
   static const Color widdgetColorTertiary = Color(0xFFE8F5E9);
 

@@ -9,19 +9,19 @@ final List<Map<String, dynamic>> sessions = [
   {
     'name': 'Hobi Bercucuk Tanam',
     'platform': 'Online',
-    'address': 'Google Meet',
+    'address': 'Zoom Meeting',
     'imageUrl': 'assets/images/poster2.png', // Replace with your image path
   },
   {
     'name': 'Benih Sihat Murah',
     'platform': 'Bersemuka',
-    'address': 'Google Meet',
+    'address': 'Dewan MAEPS, Serdang',
     'imageUrl': 'assets/images/poster3.png', // Replace with your image path
   },
   {
     'name': 'Ladang di Melaka',
     'platform': 'Bersemuka',
-    'address': 'Google Meet',
+    'address': 'Dewan Serbaguna Cempaka',
     'imageUrl': 'assets/images/poster4.png', // Replace with your image path
   },
     {

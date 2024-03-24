@@ -15,11 +15,11 @@ class DashboardCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     final list = DashboardCategoriesModel.list(context) ?? [];
     return SizedBox(
-      height: 45,
+      height: 110,
       child: ListView.builder(
         itemCount: list.length,
         shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
+        // scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
           onTap: list[index].onPress,
           child: SizedBox(
@@ -28,8 +28,8 @@ class DashboardCategories extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 45,
-                  height: 45,
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.grey,
@@ -42,22 +42,30 @@ class DashboardCategories extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 5),
-                Expanded( // Wrap the content with Expanded
+                Expanded(
+                  // Wrap the content with Expanded
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Flexible( // Wrap each Text with Flexible
+                      Flexible(
+                        // Wrap each Text with Flexible
                         child: Text(
                           list[index].heading,
-                          style: txtTheme.headline6,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold, 
+                          ),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      Flexible( // Wrap each Text with Flexible
+                      Flexible(
+                        // Wrap each Text with Flexible
                         child: Text(
                           list[index].subHeading,
-                          style: txtTheme.bodyText2,
+                          style: TextStyle(
+                            fontSize: 13,
+                          ),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
