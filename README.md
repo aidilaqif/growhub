@@ -1,16 +1,9 @@
-# growhub
+# Growhub
 
-A new Flutter project.
+GrowHub is an innovative platform revolutionizing crop management through the integration of IoT technology, AI-driven suggestions, collaborative community features, and AR-based crop progress visualization.
+Our main functionality focus on our AI-driven crop monitoring and suggestion and AR visulization progress. We also provide community platform for users to interact with each other. 
+With GrowHub we ensure ease of farming, accuracy and collaboration.
 
-## Getting Started
+## Notes:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+We ultilize the use flutter framework to create a good UI. The back-end is yet to be develop, soon will be updated.
