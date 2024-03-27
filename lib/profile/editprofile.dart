@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -16,7 +17,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Profile',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -60,23 +61,29 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ],
               ),
             ),
-            TextField(
-              controller: _nameController,
-              decoration: const InputDecoration(
-                  labelText: 'Name',
-                  labelStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Expanded(
+              flex: -1,
+              child: TextField(
+                controller: _nameController,
+                decoration: const InputDecoration(
+                    labelText: 'Name',
+                    labelStyle:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
             ),
             const SizedBox(height: 20),
-            TextField(
-              controller: _aboutController,
-              decoration: const InputDecoration(
-                  labelText: 'About',
-                  labelStyle: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  )),
-              maxLines: 3,
+            Expanded(
+              flex: 1,
+              child: TextField(
+                controller: _aboutController,
+                decoration: const InputDecoration(
+                    labelText: 'About',
+                    labelStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    )),
+                maxLines: 3,
+              ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
